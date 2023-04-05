@@ -1,0 +1,240 @@
+<!--                             Пример сайта на бутстрап(https://itproger.com/course/bootstrap-4)-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Пример сайта на бутстрап(https://itproger.com/course/bootstrap-4)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script> <!-- подключение фонтасом через скрипт -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+
+    <!-- Шапка с навигацией -->
+    <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a> <!-- лого с картинкой -->
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Главная</a></li>
+            <li class="nav-item"><a class="nav-link"href="#">Про нас</a></li>
+            <li class="nav-item"><a class="nav-link"href="#">Контакты</a></li>
+            <li class="nav-item"><a class="nav-link"href="#">Сервисы</a></li>
+            <li class="nav-item"><a class="nav-link"href="#">Команда</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Слайдер -->
+    <div id="slides" class="carousel slide">
+      <ul class="carousel-indicators">
+        <li data-bs-target="#slides" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#slides" data-bs-slide-to="1"></li>
+        <li data-bs-target="#slides" data-bs-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/slide1.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="display-2">itProger</h5>
+            <h3>Учимся программировать</h3>
+            <button type="button" class="btn btn-outline-danger btn-lg">Посмотреть</button>
+            <button type="button" class="btn btn-outline-primary btn-lg">Демо сайта</button>
+          </div>
+        </div>
+        <div class="carousel-item"><img src="img/slide2.jpg" class="d-block" alt="..."></div>
+        <div class="carousel-item"><img src="img/slide3.jpg" class="d-block" alt="..."></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#slides" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span>Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#slides" data-bs-slide="next">
+        <span>Next</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Джамботрон -->
+    <div class="container-fluid">
+      <div class="row jumbotron">
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-10">
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-2">
+          <a href="#"><button type="button" class="btn btn-success btn-lg">Читать далее</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с характеристиками -->
+    <div class="container-fluid">
+      <div class="row text-center alert">
+        <div class="col-12"><h1 class="display-4">Создание сайтов</h1></div>
+        <hr>
+        <div class="col-12">
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с описанием использованных языков -->
+    <div class="container-fluid padding"> <!-- padding - наш пользовательский класс для отступов -->
+      <div class="row text-center padding">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <i class="fa fa-code"></i> <!-- фонтасом -->
+          <h3>HTML5</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <i class="fa fa-bold"></i>
+          <h3>Bootstrap</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <i class="fa fa-css3"></i>
+          <h3>CSS3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+      </div>
+      <hr class="my-4"> <!-- my-4 - отступы -->
+    </div>
+
+    <!-- Простая секция с картинкой -->
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="offset-lg-2 col-lg-4">
+          <h2>Что-то про программирование</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a href="#" class="btn btn-danger">Читать далее</a>
+        </div>
+        <div class="col-lg-6">
+          <br><img src="https://itproger.com/img/courses/1481188465.jpg" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок с фиксированным изображением -->
+    <figure>
+      <div class="fixed-wrap">
+        <div id="fixed"></div>
+      </div>
+    </figure>
+
+    <!-- Закрытая(открывающаяся) секция -->
+    <hr>
+    <div class="text-center">
+      <button type="button" id="gifsBtn" class="btn btn-outline-success" data-bs-toggle="collapse" data-bs-target="#gifs" aria-expanded="false">Посмотреть гифки</button>
+    </div>
+    <div id="gifs" class="collapse">
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-sm-6 col-md-3">
+            <img src="img/gif-1.gif" alt="" class="gif">
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <img src="img/gif-2.gif" alt="" class="gif">
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <img src="img/gif-3.gif" alt="" class="gif">
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <img src="img/gif-4.gif" alt="" class="gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Карточки с языками программирования -->
+    <div class="container-fluid padding">
+      <div class="row alert text-center">
+        <div class="col-12">
+          <h1 class="display-4">Языки программирования</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="container padding">
+      <div class="row padding">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://itproger.com/img/courses/1534335030.jpg" alt="..." class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Ruby on Rails</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a href="#" class="btn btn-outline-warning">Посмотреть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://itproger.com/img/courses/1534230100.jpg" alt="..." class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">PHP MySQL</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a href="#" class="btn btn-outline-warning">Посмотреть</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://itproger.com/img/courses/1538723047.jpg" alt="..." class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Верстка сайта</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a href="#" class="btn btn-outline-warning">Посмотреть</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row padding text-center">
+          <div class="col-12">
+            <h2>Наши контакты</h2>
+          </div>
+          <div class="col-12 social padding"> <!-- social - наш класс для доп стилей -->
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

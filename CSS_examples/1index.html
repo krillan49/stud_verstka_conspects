@@ -1,0 +1,242 @@
+<!--                                        HTML + CSS. CSS - общая информация -->
+
+<!--
+CSS - Каскадные таблицы стилей(язык стилей для объектов html) является языком, что отвечает за оформление вида страницы. Он позволяет указать стилевое оформление каждого из HTML элементов. Также за счёт CSS можно указывать стили для файлов с XML-разметок: XUL, SVG и прочие
+
+CSS-стиль – это определённое правило, что подсказывает веб-обозревателю правила форматирования для каждого элемента. Под форматированием подразумевается: изменение цвета текста, фона элемента, шрифта, теней, позиции на экране итд.
+
+Атрибуты html и стили css
+Большинство HTML-элементов поддерживают установку стилей посредством атрибутов. Пример, отдельным элементам есть возможность указать атрибуты width и height(ширина с высотой). Атрибуты указываются прямо в HTML-файле. С ними нужно быть осторожными.
+С одной стороны – это удобный способ указать стили для конкретного блока(значения в атрибутах имеют высший приоритет), все прочие теги, подпадающие под общие селекторы, будут иметь стили с CSS-файла.
+С другой стороны – это портит HTML-код, он перестаёт быть чистым. В случае редактирования неудобно находить и менять стили по разным файлам, появляется излишняя путаница
+
+Проверка валидности
+Во время создания стилей нередко появляются неясности в отношении правильности их указания и корректности. В данном случае на помощь приходит валидатор CSS, доступный по этой ссылке.
+https://jigsaw.w3.org/css-validator/
+-->
+
+<!-- Наследование стилей - если внутри тега со стилем есть вложенный тег, то стиль распространяется и на него если для этого тега не прописать отдельно другой стиль -->
+
+
+<!--                                        HTML + CSS. Способы подключения CSS  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML + CSS</title>
+
+    <!--       1. Подключение стилей из отдельного фаила через специальный тег link -->
+
+    <!-- Этот вариант является наилучшим, так как позволяет отделять стили от HTML документа, что не только улучшит время загрузки сайта, но также улучшит читаемость кода в целом. Он позволяет создать отдельный файл с расширением .css и подключить его к веб странице при помощи специального тега link в шапке сайта - head -->
+    <link rel="stylesheet" href="css/1main.css" media="all">
+    <!-- строка пишется в теле <head> для подключения CSS где main.css будет отображаться как ссылка. Если посмотреть код страницы можно на нее нажать и проверить создан ли фаил styles.css и если создан увидеть CSS-код(так же можно смотреть и некоторые другие сайты) -->
+    <!-- media="all" позволяет задать отображение изменений только для определенного типа(например только для печати на принтере или для размеров какихто определенных экранов итд, all соотв для всего) -->
+
+
+    <!--       2. Подключение стилей через специальный тег style -->
+
+    <!-- Способ достаточно хороший, но его стоит использовать лишь в редких случаях, тк и html и css код находятся в одном фаиле и код не будет чистым. К примеру, если необходимо добавить стили, которые будут лишь на этой странице и нигде более. -->
+    <style>
+      b {
+        color: blue;
+      }
+    </style>
+    <!-- <style>...</style> специальный тег для подключения стилей. Нужно прописывать внутри тега head, если прописать внутри тега body то тоже будет работать, но будет считаться грубой ошибкой. Внутри этого тега мы прописываем тип объектов к которым будут подключаться стили, например тут для тега <b>. Через точку с запятой внутри скобок можем указать множество стилей -->
+  </head>
+
+  <body>
+
+    <!--      3. Подключение стилей через атрибут style -->
+
+    <!-- Подключение стилей через атрибут style обычно используется только если нужно подключить один-два стиля, если необходимо записать стили для какого-либо отдельного HTML объекта. Если добавлять таким образом стили для всех объектов по отдельности, то код станет совсем не читабельным, а загрузка страницы вырастет в разы. -->
+    <p style="color: red">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <b>eiusmod</b> tempor incididunt ut labore et dolore magna aliqua. Ut <b>enim</b> ad minim veniam, quis nostrud <b>exercitation</b> ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- style - атрибут для подключения стилей, подходит для любого тега. В значении этого тега прописываем CSS код, например "color: red"(тут color - свойство red - значение), который изменит цвет текста на красный. Чтобы добавить другие свойства этому объекту просто в значении ставим точку с запятой и пишем CSS код следующего свойства "color: red; some: something" -->
+
+
+
+    <!--                                    Селекторы для выборки элементов(клаасы и идентификаторы) -->
+
+    <!--     1. Выбор по имени/типу тега(стиль присваивается всем таким тегам)  -->
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+
+    <!--     2. Выбор по классу(Удобен тем что можно привоить стили группе различных конкретных тегов) -->
+    <p>Lorem ipsum dolor sit amet, <i class="main_text">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <b class="main_text">minim veniam</b>, quis nostrud exercitation ullamco <b>laboris</b> nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- class - атрибут для любого тега, значением которого можно задавать стили в CSS фаиле. Одно и то-же значение клааса можно прописывать для различных объектов -->
+
+    <!--     3. Выбор по идентификатору(Удобен для одиночных объектов, например шапка или футер) -->
+    <p id="text_in_p">Lorem ipsum dolor sit amet, <i id="i_text_in_p">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <b id="b_text_in_p">minim veniam</b>, quis nostrud exercitation ullamco <b class="main_text">laboris</b> nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- id - атрибут для любого тега, значением которого можно задавать стили в CSS фаиле. id должен быть уникальным для кадого объекта на одной странице, если будет не уникальным то все равно будет работать, но это будет считаться грубой ошибкой -->
+
+    <!--     4. Выбор по вложенным селекторам  -->
+    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <b>sed do eiusmod</b> tempor</p></div>
+
+    <!--     4а. Вложение различных типов селекторов выбора -->
+    <p class="some_text">Some text</p>
+
+    <!--     5. Группировка различных селекторов выбора   -->
+    <div>
+      <p>Lorem ipsum dolor sit amet, <i id="div_text_in_p">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Ut enim ad <b>minim veniam</b>, quis nostrud exercitation ullamco <big class="any_text">laboris</big> nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <!--     6. Мультиклассы(два и более класса селекторов)  -->
+    <p class="a b">rfrjqnj ntrcn</p> <!-- Если писать через пробел то объекту присвоится 2 класса сразу -->
+    <p class="a">lheujq ntrcn</p>
+    <p class="b">nhtnbq ntrcn</p>
+
+    <!--     7. Выбор по наличию атрибута -->
+    <p name="bottomOfPage">Lorem ipsum dolor sit amet.</p>
+    <p name="some_name">Lorem ipsum dolor sit amet.</p>
+    <div name="div_name">Lorem ipsum dolor sit amet</div>
+
+    <!--    8. Дочерние селекторы -->
+    <div id="example">
+    	Lorem ipsum dolor sit amet, <i>consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i>Ut</i> enim ad minim veniam. <span>Lorem <i>ipsum</i> dolor sit amet.</span> <!-- Стили применяются ко всем тегам i вложенным в тег div кроме вложенных в другие теги(тут span)-->
+    </div>
+
+    <!--   9. Соседние селекторы -->
+    <p>Lorem <span>ipsum dolor</span> sit amet, <b>consectetur</b> adipisicing elit, <b>sed do</b> eiusmod tempor incididunt ut labore et dolore <span>magna aliqua.</span> Ut enim ad minim veniam</p> <!-- Стили присвоятся только тем селекторам b что идут сразу за селектором span -->
+
+
+
+    <!--                                          Псевдоклассы и псевдоэлементы -->
+
+    <!--    1. Псевдоклассы: -->
+
+    <!--  :visited - псевдокласс применяющий стили к объекту/ссылке по которой мы уже переходили(остается после обновления); :hover - псевдокласс применяющий стили к объекту при наведении курсора на него;
+    :active - псевдокласс применяющий стили к объекту при нажатии на него   -->
+    <a href="#" class="main_link">Ссылка вникуда</a><br>
+    <p class="main_link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+
+    <!-- :focus - псевдокласс применяющий стили к текстовому полю(input/textarea) когда оно активно -->
+    <input type="text" placeholder="Введите текст">
+    <input type="text" placeholder="Введите текст" disabled><br>
+
+    <!-- :not - псевдокласс применяет стили к объектам обратным к другому псевдоклассу указанному в скобках, в данном случае это будут объекты не являющиеся пустыми -->
+    <p class="text">Text</p>
+    <p class="text"></p>
+
+    <!-- :first-of-type :last-of-type -->
+    <h2 class="h2">Первый элемент аш2</h2>
+    <h2 class="h2">Последний элемент аш2</h2>
+
+    <!-- :first-child -->
+    <p class="child">Lorem <b>ipsum</b> dolor <b>sit</b> amet.</p>
+    <div>
+      <span class="child">Первый дочерний элемент</span>
+      <span class="child">Второй дочерний элемент</span>
+    </div>
+    <!-- :nth-child(kn) -->
+    <h1 class="nchild">Lorem <span>ipsum</span> dolor <span>sit</span> amet. <span>ipsum</span> dolor <span>sit</span> amet.</h1>
+
+    <!-- :has() -->
+    <p>
+    <a href="#">Ссылка без тега b</a>
+    <a href="#">Ссылка с тегом <b>b</b></a>
+    <a href="#">Ссылка без тега b</a>
+    </p>
+
+
+    <!--    2. Псевдоэлементы: -->
+
+    <!--  ::after и ::before -->
+    <div id="after_before_id" title="значение атрибута тайтл">Some text</div>
+
+    <p class="text2">Псевдоэлементы и псевдоклассы</p>
+
+    <!-- ::first-letter и ::first-line -->
+    <p class="f_sym">Lorem ipsum dolor sit amet</p>
+    <p class="f_lin">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+    <!--                                      Работа с фоновыми картинками -->
+
+    <!-- Установка фона через универсальное background свойство. Фиксированный задний фон -->
+    <div id="first"><h1 align="center" style="color: red">Проверка фона</h1></div>
+
+
+
+    <!--                                         Стили для текста -->
+
+    <p class="text_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <!-- Подключение дополнительных шрифтов при помощи https://fonts.google.com/ -->
+    <p class="text_text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+    <!--                                         Стили для блоков -->
+
+    <div class="block_stile">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div> <!-- блочный элемент -->
+    <span class="block_stile">Simple</span> <!-- строковый элемент -->
+    <div class="borders"></div>
+
+
+    <!--                                        Стили для полей ввода -->
+    <input type="text" id="some_in">
+
+
+
+    <!--                                          Стили для списков  -->
+    <div id="list">
+      <ul>
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
+      </ul>
+    </div>
+
+
+
+    <!--                                          Различные свойства -->
+    <!-- 1.  Свойство all -->
+    <div class="all1">
+      <h2>Свойство all</h2><p>Информация по поводу свойства all</p>
+    </div>
+
+    <!-- 2.  Функция blur() -->
+    <div id="css-course">
+      <img src="img/vegeta.jpg">
+    </div>
+
+
+
+    <!--                                      Позиционирование блоков -->
+
+    <div id="first_block" class="block"></div>
+    <div id="second_block" class="block"></div>
+    <div id="third_block" class="block"></div>
+
+    <div id="clear_block"></div> <!-- Исправляем проблемы со свойством float у предыдущего блока(след блок без свойства float наложится на него). "добавить пустой div со стилем clear: both перед следующим блоком" -->
+
+    <!-- Использование слоев(иерархия слоев) -->
+    <div id="f_block"></div>
+    <div id="s_block"></div>
+
+    <!-- Позиционирование элементов внутри блока(свойство overflow)-->
+    <div id="block_text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div id="block_text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div id="block_text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div id="block_text4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -->

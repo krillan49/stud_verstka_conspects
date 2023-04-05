@@ -1,0 +1,173 @@
+<!--                                  Cайт на скачанном Bootstrap с применением доп CSS -->
+
+<!--
+Скачивание:
+download(на главной странице) -> скачать -> распаковываем выбираем нужные нам фаилы(описание фаилов в пункте сравнение фаилов... https://getbootstrap.com/docs/5.3/getting-started/contents/#css-files ; https://getbootstrap.com/docs/5.3/getting-started/contents/#js-files)(например по минимуму: bootstrap.css из папки css  и  bootstrap.bundle.js)
+
+Дополнительно качаем иконки с https://fontawesome.ru/, качаем разархивируем, оставляем нужный фаил(тут font-awesome.min.css в папку css и 3 фаила в папку fonts)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Cайт на скачанном Bootstrap с применением доп CSS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1.0"> <!--мобилки-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- подключение фонтасом через стили -->
+    <link rel="stylesheet" href="css/main.css"> <!-- свои стили -->
+  </head>
+
+  <body>
+
+    <!-- Шапка с навигацией -->
+    <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary" data-bs-theme="dark">
+      <div class="container">
+        <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_content" aria-controls="navbar_content" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- делаем лого с использованием элементов и классов https://fontawesome.ru/ -->
+        <a class="navbar-brand" href="#">K<i class="fa fa-circle"></i>LH<i class="fa fa-circle"></i>ZNIC</a>
+        <div class="navbar-collapse collapse" id="navbar_content">
+          <ul class="navbar-nav ms-auto">
+            <li><a class="nav-link" href="#">Домой</a></li>
+            <li><a class="nav-link" href="#">Про нас</a></li>
+            <li><a class="nav-link" href="#">Сервисы</a></li>
+            <li><a class="nav-link" href="#">Работы</a></li>
+            <li><a class="nav-link" href="#"><i class="fa fa-envelope-o"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Подшапка с картинкой -->
+    <div id="headerwrap">
+      <div class="container">
+        <div class="row text-center">
+          <div class="offset-lg-2 col-lg-8">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Информационный контейнер -->
+    <div class="container w">
+      <br><br>
+      <div class="row text-center">
+        <div class="col-lg-4">
+          <i class="fa fa-heart"></i>
+          <h4>Проект</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-laptop"></i>
+          <h4>Реализация</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-trophy"></i>
+          <h4>Рейтинг</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+      </div>
+      <br><br>
+    </div>
+
+    <!-- Портфолио -->
+    <div id="dg">
+      <div class="container">
+        <h4>Последние работы</h4>
+        <br><br>
+        <div class="row text-center">
+          <div class="col-lg-4">
+            <div class="tilt">
+              <a href="#"><img src="img/port1.jpg" alt="картинка"></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="tilt">
+              <a href="#"><img src="img/port2.jpg" alt="картинка"></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="tilt">
+              <a href="#"><img src="img/port3.jpg" alt="картинка"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Средняя статья -->
+    <div class="container wb">
+      <br><br>
+      <div class="row text-center">
+        <div class="offset-lg-2 col-lg-8">
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>
+        <div class="offset-lg-1 col-lg-10">
+          <img src="img/srstat.jpg" alt="" class="img-responsive">
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок партнеров -->
+    <div id="lg">
+      <div class="container-fluid">
+        <h4>Partners</h4>
+        <br><br>
+        <div class="row text-center">
+          <div class="offset-lg-1 col-lg-2"> <img src="img/part1.png" alt=""> </div>
+          <div class="col-lg-2"> <img src="img/part2.jpg" alt=""> </div>
+          <div class="col-lg-2"> <img src="img/part3.jpg!d" alt=""> </div>
+          <div class="col-lg-2"> <img src="img/part4.jpg" alt=""> </div>
+          <div class="col-lg-2"> <img src="img/part5.jpeg" alt=""> </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Надфутер -->
+    <div id="r">
+      <div class="container">
+        <div class="row text-center">
+          <div class="offset-lg-2 col-lg-8">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col"><a href="#"><i class="fa fa-facebook"></i></a></div>
+          <div class="col"><a href="#"><i class="fa fa-twitter"></i></a></div>
+          <div class="col"><a href="#"><i class="fa fa-vk"></i></a></div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--  -->

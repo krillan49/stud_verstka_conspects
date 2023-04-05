@@ -1,0 +1,777 @@
+<!--                                         Bootstrap5(css фрэймворк) -->
+<!--
+https://getbootstrap.com/
+
+Bootstrap(twitter bootstrap) - набор css стилей придуманные компанией разработчиком твитера. Bootstrap - это фрэймворк для css(уже написаны CSS стили). Те это набор фаилов с расширением css(+ немного джаваскрипта) и если их подключить то эти стили будут у нас автоматически осуществляться.
+
+Все сайты, что строятся на Бутстрап имеют продуманную структуру и являются адаптивными по умолчанию.
+
+Принцип работы с Bootstrap прост:
+- скачать или подключить Bootstrap при помощи CDN;
+- выполнить верстку сайта с помощью Bootstrap, используя подготовленные стили.
+
+Бутстрап если его скачивать занимет примерно 500кб(и css и js  фаилы), это не так мало и сайт может грузиться долго, поэтому для своего сайта нужно выбирать и скачивать только те опции которые нам нужны(например если на сайте нет открывающихся списков, то и добавлять их не нужно)
+
+== Подключение через CDN(удаленный сервер на которм находятся фаилы):
+https://getbootstrap.com/ -> Include via CDN -> копируем строку (например <link href="https://cdn.js ...>) в тело тега head в нашем HTML-erb фаиле. Далее копируем напимер из раздела https://getbootstrap.com/docs/5.2/components/buttons/ различные компоненты в необходимые нам строки в HTML фаиле( например class="btn btn-primary" добавть в строку кнопки вот так <input type="submit" class="btn btn-primary" />) и неоходимый стиль появится на нашем сайте.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- доп адаптивность для телефонов -->
+
+    <!-- Подключение Bootstrap стилей через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Подключение Bootstrap js-скриптов через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- JQuary не актуально в bootstrap 5. Там нативный js -->
+
+    <!-- Подключение доп стилей для иконочного шрифта CDN: https://icons.getbootstrap.com/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Подключение https://fontawesome.ru/ (фрэймворк для иконок отдельный те не бутстрап) Krillan@yandex.ru 61085vegita Его работу и подключение через скачивание можно посмотреть в site_examle_with_bootstrap_in_files -->
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- теперь элементы получают стили от bootstrap -->
+    <!-- отступы по умолчанию удалены -->
+    Просто текст  <!-- получил стили от bootstrap -->
+    <h4>Текст в h4</h4> <!-- получил стили от bootstrap -->
+    <div class="container">
+      <!-- container - класс блока некой изначально заданной фиксированной ширины с отступом(таким что блок центрирован). Если не использовать материнский класс container, то некоторые элементы(например сетка) могут вылезать за границы экрана и появится скролл -->
+      <!-- container-fluid -fluid - суффикс класса означающий что контейнер растянется на всю ширину экрана -->
+      <h2>Текст в div(container) h2</h2>
+      <p>Текст в div(container) p</p>
+    </div>
+
+
+    <!--                                   Bootstrap-Grid система (система сеток) -->
+
+    <!-- https://getbootstrap.ru/docs/5.1/layout/grid/ -->
+    <hr><center><h1>Bootstrap-Grid система (система сеток)</h1></center><hr>
+    <!-- За счёт системы сеток можно располагать объекты в один ряд, делать объекты адаптивными, а также указывать общую структуру расположения объектов на сайте.-->
+
+    <div class="container-fluid"> <!-- Растягиваем блок на всю ширину экрана при помощи класса fluid -->
+      <h5>Блок с 3мя блоками-столбцами на всю ширину экрана и отступом</h5>
+      <div class="row"> <!-- row - класс создающий ряд в который мы разместим столбцы -->
+        <div class="col-md-3" style="background-color: #ff9999"> <!-- col класс создающий столбец помещается в row -->
+        <!-- col - класс столбца. Если нужны равные по размеру столбцы размер можно не указывать(тут для примера) -->
+        <!-- Классы для столбцов: xm - экстра смалл(например под смартфоны); sm - смолл, маленький например для планшетов; md - мидл под небольшие ноутбуки и лэптопы; lg - лардж под большие мониторы(27 дюймов например).-->
+        <!-- 1,2,3,4,5,6... - размер столбца в сетке. В системе сеток Bootstrap может быть максимум 12 столбцов и их 12 по умолчанию, столбцы можно объединять увеличивая их относительный размер как число частей от 12. Если столбцы превышают суммарную 12 в ряду, то лишние столбцы смещаются в новый ряд -->
+          Left
+        </div>
+        <div class="offset-md-3 col-md-3" style="background-color: #99ccff">Middle</div>
+        <!-- offset-md-3 - класс оступа с размером(тут будет занимать 1ю, 2ю и 3ю колонку) и размером экрана. -->
+        <div class="col-md-3" style="background-color: #00cc99">Right</div>
+      </div>
+      <!-- Тут мы создали адаптивную сетку из 3х блоков, которые будут подстраиваться под размер экрана(на определенном размере(под планшеты/телефоны) еще и выстраиваются в один ряд вместо столбцов)-->
+    </div>
+
+    <div class="container"> <!-- не растягиваем блок на всю ширину экрана оставляя его предварительно заданный размер, по умолчанию он будет центрирован -->
+      <h5>Блок фиксированного размера с 4мя блоками-столбцами разных размеров</h5>
+      <div class="row">
+        <!-- Задаем блокам разные размеры(если не задать размер то он будет переменной ширины) -->
+        <div class="col-md-1" style="background-color: #999922; color: #fff;">One</div>
+        <div class="col-md-2" style="background-color: #229999; color: #fff;">Two</div>
+        <div class="col-md-3" style="background-color: #bb2222; color: #fff;">Three</div>
+        <div class="col-md-6" style="background-color: #992299; color: #fff;">Six</div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h5>Адаптивный блок-сетка с конкретными значениями для каждого размера экрана.</h5>
+      <div class="row">
+        <!-- Задаем блокам разные размеры для обоих колонок под каждый тип экрана(Задаем брэйкпоинты) -->
+        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #00ccff; color: #fff;">Первый</div>
+        <div class="col-xs-12 col-sm-3 col-md-8 col-lg-6" style="background-color: #cc00ff; color: #fff;">Второй</div>
+        <!-- Теперь: для lg колонки будут 6+6; md 4+8; sm 9+3; а для xs полноразмерные колонки будут занимать каждая по ряду. Размеры больше указанных будут соотв самому большому из указанных, размеры меньше указанных будут равны 12, так что col-xs-12 можно было не указывать -->
+      </div>
+
+      <h5>Изменение очередности колонок местами</h5>
+      <!-- order-(1..5) класс для управления визуальным порядком контента. Можно установить order по контрольной точке (например, .order-1.order-md-2). Включает поддержку от 1 до 5 на всех шести уровнях сетки. Существуют также адаптивные классы .order-first и .order-last, которые изменяют order элемента, применяя order: -1 и order: 6. Эти классы также могут быть при необходимости смешаны с пронумерованными классами .order-*. -->
+      <div class="row">
+        <div class="col-md-3" style="background-color: #cc3399; color: #fff;">Первый в DOM, порядок не применяется</div>
+        <div class="col-md-3 order-5" style="background-color: #9933cc; color: #fff;">Второй в DOM, с наибольшим порядком</div>
+        <div class="col-md-6 order-1" style="background-color: #cc9933; color: #fff;">Третий в DOM, с 1 порядком</div>
+      </div>
+    </div>
+
+    <h5>Вложенные сетки</h5>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3" style="background-color: #cc3399; color: #fff;">Первый</div>
+        <div class="col-md-3" style="background-color: #9933cc; color: #fff;"> <!-- Если убираем контент из материнской колонки тогда вложенная сетка займет все пространство колонки(если нет в другой колонке вложенной сетки разделяющей колонку, так вложенная сетка тут будет в верхней половине наверно надо добавить max-height) -->
+          <div class="row"> <!-- для вложенной сетки просто добавляем ее в колонку материнской сетки -->
+            <div class="col-md-6" style="background-color: #3333bb; color: #fff;">Первый вложенный</div>
+            <div class="col-md-6" style="background-color: #bb33bb; color: #fff;">Второй вложенный</div>
+          </div>
+        </div>
+        <div class="col-md-6" style="background-color: #cc9933; color: #fff;">Третий <!-- Если отставляем контент в материнской колонке, тогда он займет верхний подряд мат колонки а вложенная сетка нижний -->
+          <div class="row">
+            <div class="col-md-5" style="background-color: #333333; color: #fff;">Первый вложенный</div>
+            <div class="col-md-7" style="background-color: #888888; color: #fff;">Второй вложенный</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--                                   Работа с текстом(стили для текста) -->
+
+    <hr><center><h1>Работа с текстом(стили для текста)</h1></center><hr>
+    <!-- Заголовки -->
+    <h2>Заголовок h2</h2>
+    <p class="h2">p class="h2" == Заголовок h2</p>
+    <!-- Стили для выделения части тества -->
+    <p>Просто текст в p<mark>Текст в mark в p</mark></p>
+
+    <p>Lorem ipsum dolor <span class="lead">sit amet, consectetur adipisicing elit</span>, sed do eiusmod tempor incididunt</p> <!-- lead - класс увеличивающий размер текста -->
+
+    <!-- Дополнительные большие размеры текста(или не только для текста?)(от 1 до 6, где 1 самый большой) -->
+    <h2 class="display-4">display-4</h2>
+    <p class="display-3">display-3</p>
+    <h6 class="display-2">display-2</h6>
+    <p class="display-1">display-1</p>
+
+    <!-- Позиционирование текста -->
+    <p class="text-start">class="text-start"(выравнивание слева)</p>
+    <p class="text-center">class="text-center"(выравнивание по центру)</p>
+    <p class="text-end">class="text-end"(выравнивание справа)</p>
+    <p class="text-justify">class="text-justify"(выравнивание по обоим краям)</p>
+    <p class="text-nowrap">class="text-nowrap"(без переноса строки)</p>
+    <div class="text-center"> <!-- подходит для всех текствовых элементов например для текстовых кнопок -->
+      <button type="button" class="btn btn-outline-success">Центрированная кнопка</button>
+    </div>
+
+    <!-- Цитата -->
+    <figure class="text-end">
+      <blockquote class="blockquote"> <!-- blockquote - класс стилей цитаты -->
+        <p>Известная цитата, содержащаяся в элементе цитаты.</p>
+        <figcaption class="blockquote-footer"> <!-- blockquote-footer класс для автора цитаты -->
+          Кто-то, известный в <cite title="Source Title">названии источника</cite>
+        </figcaption>
+      </blockquote>
+    </figure>
+
+    <!-- Регистры текста -->
+    <p class="text-uppercase">uppercase</p>
+    <p class="text-lowercase">LoweRcaSe</p>
+    <p class="text-capitalize">capitalize</p>
+
+    <!-- Элементы кода и другие выделения -->
+    <code>each</code>, <code>map</code>, <code>select</code>
+
+    <br>Чтобы переключить каталоги, введите <kbd>cd</kbd>, а затем имя каталога.<br>
+    Чтобы изменить настройки, нажмите <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+
+    <!-- Цвета текста --> <br><br>
+    <p class="text-muted">text-muted</p>
+    <p class="text-primary">text-primary</p>
+    <p class="text-success">text-success</p>
+    <p class="text-info">text-info</p>
+    <p class="text-warning">text-warning</p>
+    <p class="text-danger">text-danger</p>
+
+    <!-- Цвета фона текста или блоков -->
+    <p><span class="bg-primary">text-primary</span></p>
+    <p class="bg-success">text-success</p>
+    <p><span class="bg-info">text-info</span></p>
+    <p class="bg-warning">text-warning</p>
+    <p><span class="bg-danger">text-danger</span></p>
+
+
+    <!--                                   Работа с таблицами(стили таблиц)   -->
+
+    <!-- https://getbootstrap.ru/docs/5.1/content/tables/ -->
+    <hr><center><h1>Работа с таблицами(стили таблиц)</h1></center><hr>
+
+    <h5>table-striped и table-responsive</h5>
+    <div class="table-responsive">  <!-- table-responsive - доп адаптивность для 769px и ниже(полосы прокрутки) -->
+      <table class="table table-striped"> <!-- Таблицу можно помещать или не помещать в блок и везде она будет адаптивной -->
+        <!-- table - класс добавляющий основные стили таблице(без него будет обычная html таблица) -->
+        <!-- table-striped - класс меняющий цвета каждой второй строки на серый -->
+        <thead> <tr> <th>Имя</th> <th>Номер телефона</th> <th>Почта</th> </tr> </thead>
+        <tbody>
+          <tr> <td>Вася</td> <td>+76565475647</td> <td>vasya@gmail.com</td> </tr>
+          <tr> <td>Миша</td> <td>+70907979866</td> <td>misha@gmail.com</td> </tr>
+          <tr> <td>Петя</td> <td>+77658765576</td> <td>petya@gmail.com</td> </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h5>table-hover, table-bordered и table-active</h5>
+    <table class="table table-hover table-bordered">
+      <!-- table-hover - класс меняющий цвет строки при наведении на серый -->
+      <!-- table-bordered - класс добавляющий доп обводку элементов там где ее не было -->
+      <thead> <tr class="table-active"> <th>Имя</th> <th>Номер телефона</th> <th>Почта</th> </tr> </thead>
+      <!-- table-active - класс меняющий цвет элемента(tr th td) на серый -->
+      <tbody>
+        <tr> <td>Вася</td> <td>+76565475647</td> <td>vasya@gmail.com</td> </tr>
+        <tr> <td>Миша</td> <td class="table-active">+70907979866</td> <td>misha@gmail.com</td> </tr>
+      </tbody>
+    </table>
+
+    <h5>Фон элементов</h5>
+    <table class="table">
+      <!-- Классы фона применяются к table, thead, tbody, tr, th, td  -->
+      <thead class="table-primary">
+        <tr> <th>table-primary</th> <th>table-primary</th> <th>table-primary</th> </tr>
+      </thead>
+      <tbody>
+        <tr class="table-secondary"> <td>table-secondary</td> <td>table-secondary</td> <td>table-secondary</td> </tr>
+        <tr>
+          <td class="table-success">table-success</td>
+          <td class="table-danger">table-danger</td>
+          <td class="table-warning">table-warning</td>
+        </tr>
+        <tr>
+          <td class="table-info">table-info</td>
+          <td class="table-light">table-light</td>
+          <td class="table-dark">table-dark</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!--                                   Кнопки и группы кнопок(стили для кнопок)  -->
+
+    <!-- https://getbootstrap.ru/docs/5.1/components/buttons/ -->
+    <hr><center><h1>Кнопки и группы кнопок(стили для кнопок)</h1></center><hr>
+
+    <h5>Типы и цвета кнопок</h5>
+    <button class="btn btn-light">Стандартная</button>
+      <!-- btn - класс задающий для бутстрап что это кнопка(можно применять к любому тегу) -->
+      <!-- btn-light - цветовой стиль кнопки. Стили цветов кнопок имеют аналогичное название со стилями текста или таблиц -->
+    <!-- Класс btn так же можно применить к тегам input и a(а так же к другим тегам) -->
+    <input type="submit" class="btn btn-primary" value="input">
+    <a href="#" class="btn btn-info" role="button">Ссылка в кнопку</a> <!-- стилизуем ссылку под кнопку -->
+      <!-- role - атрибут указывающий назначение элемента -->
+    <button class="btn btn-link">Кнопка в ссылку</button> <!-- btn-link стилизуем кнопку под ссылку -->
+
+    <h5>Кнопоки с цветом обводки и явным hover эффектом</h5>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+
+    <h5>Размеры кнопок</h5>
+    <!-- Задаются при помощи стилей btn-(lg/md/sm) (md - по умолчанию) -->
+    <button type="button" class="btn btn-primary btn-lg">Большая(lg) кнопка</button>
+    <button type="button" class="btn btn-secondary btn-md">Средняя(md) кнопка(по умолчанию)</button>
+    <button type="button" class="btn btn-dark btn-sm">Маленькая(sm) кнопка</button>
+
+    <h5>Блочные кнопки(со свойствами блока в отличие от строчных что выше)</h5>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="button">Кнопка</button>
+      <button class="btn btn-warning" type="button">Кнопка</button>
+    </div>
+
+    <h5>Переключение состояния на нажатое/ненажатое и нажатое или неактивное по умолчанию</h5>
+    <!-- Добавьте data-bs-toggle="button" для переключения состояния active. Если Вы предварительно переключаете кнопку, вы должны вручную добавить класс .active и aria-pressed="true" чтобы гарантировать, что это будет правильно передано вспомогательным технологиям. -->
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="button" autocomplete="off">Кнопка-переключатель</button>
+    <button type="button" class="btn btn-outline-dark active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Изначально активная кнопка-переключатель</button>
+    <button type="button" class="btn btn-outline-dark" disabled data-bs-toggle="button" autocomplete="off">Отключенная кнопка-переключатель</button>
+
+    <h5>Группы кнопок</h5> <!-- https://getbootstrap.ru/docs/5.1/components/button-group/ -->
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <!-- btn-group - класс для группирования кнопок -->
+      <!-- aria-label - атрибут описывающий что это за группа кнопок -->
+      <button type="button" class="btn btn-danger">Левая</button>
+      <button type="button" class="btn btn-warning">Средняя</button>
+      <button type="button" class="btn btn-success">Правая</button>
+    </div>
+
+    <h5>Группа кнопок(из тега label) объединенная с флажком(checkbox)</h5>
+    <div class="btn-group" role="group" aria-label="Базовая группа переключателей флажков">
+      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btncheck1">Флажок 1</label>
+
+      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btncheck2">Флажок 2</label>
+    </div>
+
+    <h5>Группа кнопок(из тега label) объединенная с радио(radio)</h5>
+    <div class="btn-group" role="group" aria-label="Базовая группа переключателей радио">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btnradio1">Радио 1</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio2">Радио 2</label>
+    </div>
+
+    <h5>Панели инструментов(группы кнопок объединеныые в группу)</h5>
+    <div class="btn-toolbar" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+      <!-- btn-toolbar класс панели инструментов -->
+      <div class="btn-group me-2" role="group" aria-label="Первая группа">
+        <button type="button" class="btn btn-primary">1</button>
+        <button type="button" class="btn btn-primary">2</button>
+      </div>
+      <div class="btn-group me-2" role="group" aria-label="Вторая группа">
+        <button type="button" class="btn btn-secondary">3</button>
+        <button type="button" class="btn btn-secondary">4</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Третья группа">
+        <button type="button" class="btn btn-info">5</button>
+      </div>
+    </div>
+
+    <h5>Размеры групп кнопок</h5>
+    <!-- Вместо того, чтобы применять классы изменения размера кнопок к каждой кнопке в группе, просто добавьте .btn-group-(lg/sm) к каждой .btn-group, включая каждую при вложении нескольких групп. -->
+    <div class="btn-group btn-group-lg" role="group" aria-label="группа больших кнопок">
+      <button type="button" class="btn btn-danger">Левая</button>
+      <button type="button" class="btn btn-warning">Средняя</button>
+      <button type="button" class="btn btn-success">Правая</button>
+    </div>
+
+    <h5>Вертикальное раположение кнопок в группе</h5>
+    <div class="btn-group-vertical">
+      <button type="button" class="btn btn-danger">Левая</button>
+      <button type="button" class="btn btn-warning">Средняя</button>
+      <button type="button" class="btn btn-success">Правая</button>
+    </div>
+
+
+    <!--                                  Создание форм и полей(стили для форм и полей)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/forms/overview/ -->
+    <hr><center><h1>Создание форм и полей(стили для форм и полей)</h1></center><hr>
+
+    <h5>Основные стили форм</h5>
+    <form>
+
+      <h6 class="text-info"><i>а. поле для почты</i></h6> <!-- просто заголовки для красоты -->
+      <div class="mb-3"> <!-- каждое поле(с его описанием подсказками итд) в бутстрап должны быть помещены в отдельный блок -->
+      <!-- mb-3  = margin botom 3 -->
+        <label for="input_email" class="form-label">Email address</label>
+          <!-- form-label - класс для label для поля -->
+        <input type="email" class="form-control" id="input_email" aria-describedby="email_help">
+          <!-- form-control - класс задающий стили для поля(делает на всю ширину родительского объекта на новую строку итд. Соотв если нужно ограничить можно поместить в блок с классом контейнер) -->
+          <!-- aria-describedby="email_help" - связываем поле с id текстом формы(для вспомогательных технологий) -->
+        <div id="email_help" class="form-text">We'll never share your email with anyone else.</div>
+          <!-- form-text - класс для текста подсказки для поля. Встроенный текст может использовать любой типичный встроенный элемент HTML (будь то <span>, <small>или что-то еще) только с .form-text классом -->
+      </div>
+
+      <h6 class="text-info"><i>б. поле для пароля</i></h6>
+      <div class="mb-3">
+        <label for="input_password" class="form-label">Password</label>
+        <input type="password" class="form-control form-control-lg is-invalid" id="input_password">
+        <!-- form-control-(lg/md/sm) - классы для размера поля -->
+        <!-- is-(invalid/) - класс изменения цвета обводки поля -->
+      </div>
+
+      <h6 class="text-info"><i>в. чекбокс</i></h6>
+      <div class="mb-3 form-check"> <!-- form-check - доп класс стилей для элементов чекбокса -->
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <!-- form-check-label и form-check-input - доп классы стилей для чекбокса -->
+      </div>
+
+      <h6 class="text-info"><i>г. селектор</i></h6>
+      <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+      <!-- form-select - класс для селектора(не нужен доп div ??) -->
+      <!-- form-select-(lg/md/sm) - классы для размера селектора -->
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+
+      <h6 class="text-info"><i>д. элемент формы в линию при помощи системы сеток</i></h6>
+      <div class="row g-3 align-items-center"> <!-- Используем стили бутстрап-сеток чтобы расположить элементы формы в одну линию, такой элемент формы можно тоже помещать в форму -->
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">Must be 8-20 characters long.</span>
+        </div>
+      </div>
+
+      <h6 class="text-info"><i>е. простой текст только для чтения</i></h6>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label> <!-- класс сетки прямо в label -->
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+        </div>
+      </div>
+
+      <h6 class="text-info"><i>ж. кнопка</i></h6>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <!-- Итд остальные элементы в документации -->
+    </form>
+
+    <br><h5>Неактивная форма</h5>
+    <form>
+      <fieldset disabled> <!-- Таким образом деактивируем форму -->
+        <div class="mb-3">
+          <label for="disabledTextInput" class="form-label">Disabled input</label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+        </div>
+        <div class="mb-3">
+          <label for="disabledSelect" class="form-label">Disabled select menu</label>
+          <select id="disabledSelect" class="form-select">
+            <option>Disabled select</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+            <label class="form-check-label" for="disabledFieldsetCheck">Can't check this</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Disabled Submit</button>
+      </fieldset>
+    </form>
+
+
+    <!--                                  Иконочный шрифт и изображения  -->
+
+    <!-- https://icons.getbootstrap.com/ иконки бутстрап -->
+    <!-- https://glyphicons.com/ отдельно иконочный шрифт -->
+    <!-- https://fontawesome.ru/ доп фрэймворк для иконок(отдельный от бутстрап работает похоже на бутстрап) -->
+    <hr><center><h1>Иконочный шрифт и изображения</h1></center><hr>
+    <!-- Иконочный шрифт необходимо подключить отдельно от основных стилей бутстрап -->
+
+    <h5>Иконочный шрифт bootstrap</h5>
+    <i class="bi bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+    <!-- bi - класс иконочного шрифта  -->
+    <!-- alarm - класс конкретной иконки. Найти другие можно на https://getbootstrap.ru/docs/icons -->
+    <!-- тк это шрифт а не картинка то можно добавлять текстовые стили и качество не будет падать при изменении масштаба -->
+    <span class="bi bi-app-indicator" style="font-size: 3rem; color: red;"></span> <!-- Так же можно использовать тег span -->
+
+    <h6><i>Кнопка с иконкой</i></h6>
+    <button class="btn btn-success">
+      <span class="bi bi-arrow-through-heart"></span> Все хорошо
+    </button>
+
+    <br><br><h5>Значки/стикеры</h5> <!-- https://getbootstrap.com/docs/5.0/components/badge/ -->
+    <!-- Значки масштабируются в соответствии с размером непосредственного родительского элемента с использованием относительного размера шрифта и eдиниц измерения. Можно интегрировать в кнопки другие элементы итд -->
+    <h3>Example heading <span class="badge bg-secondary">New</span></h3> <!-- Только тег span -->
+    <!-- badge - класс стикеров -->
+    <!-- bg-secondary - класс цвета -->
+    <h4>Example heading <span class="badge rounded-pill bg-danger">New</span></h4>
+    <!-- rounded-pill - скругление углов -->
+
+    <br><h5>Картинки(адаптивные)</h5> <!-- https://getbootstrap.com/docs/5.3/content/images/ -->
+    <img src="http://happymodern.ru/wp-content/uploads/2015/10/Proekti_karkasnih_domov_41-650x431.jpg" class="img-fluid img-thumbnail rounded">
+    <!-- img-fluid - делает картинку адаптивной max-width: 100%; и height: auto; -->
+    <!-- img-thumbnail - закругленная рамка вокруг картинки -->
+    <!-- rounded - закругляются края самой картинки -->
+    <img src="http://happymodern.ru/wp-content/uploads/2015/10/Proekti_karkasnih_domov_41-650x431.jpg" class="img-fluid float-end">
+    <!-- float-end - float right -->
+
+
+    <!--                                         Текстовые панели/карточки  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/card/ -->
+    <!-- Панели созданные на основе flexbox по сути просто блоки выделенные стилями предназначенные для изображений, текста, групп списков, ссылок и многого другого. Карточка — это гибкий и расширяемый контейнер содержимого. Он включает в себя параметры верхних и нижних колонтитулов -->
+    <hr><center><h1>Текстовые панели/карточки</h1></center><hr>
+
+    <br><h5>Основные стили карточек</h5>
+    <div class="card w-25 text-bg-secondary border-danger" style="width: 18rem;">
+      <!-- card - класс карточки -->
+      <!-- w-25 - универсальный класс-утилита для задания ширины -->
+        <!-- Так же ширину можно задать отдельным стилем style="width: 18rem;" -->
+      <!-- text-bg-secondary - цветовой стиль -->
+      <!-- border-danger - цветовой стиль обводки -->
+      <div class="card-header">Featured</div> <!-- хэдер если он нужен -->
+      <img src="https://img.quizur.com/f/img5c83d26d06ace2.52922329.png?lastEdited=1552142983" class="card-img-top" alt="дбз">
+      <!-- card-img-top - Картинка адаптивно занимает верхнюю часть карточки и скругления сверху -->
+      <div class="card-body">
+        <!-- card-body - класс основного пространства карточки или раздела если их несколько -->
+        <h5 class="card-title">Card title</h5> <!-- Заголовок -->
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> <!-- Подзаголовок -->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="card-link link-info">Another link</a>
+      </div>
+      <ul class="list-group list-group-flush"> <!-- Список помещается без body класса -->
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+      <div class="card-footer text-muted">2 days ago</div> <!-- Футер если нужен -->
+    </div>
+
+    <br><h5>Размещение карточек в сетке</h5>
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0"> <!-- Размещаем карточку в колонке сетки -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Так же есть группы карточек аналогично кнопкам и более сложные сетки -->
+
+
+    <!--                                  Выпадающее меню и списки  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/dropdowns/  -->
+    <hr><center><h1>Выпадающее меню и списки</h1></center><hr>
+    <!-- сделаны интерактивными с помощью прилагаемого плагина JavaScript с раскрывающимся списком Bootstrap. Они переключаются щелчком, а не зависанием -->
+
+    <div class="dropdown">
+    <!-- dropdown - класс выпадающего списка, выпадающий вниз. dropdown - список выпадает прижатым от левого края; dropdown-center - список выпадает центрированно -->
+    <!-- dropup и другие классы выпадающих списков выпадают в других направлениях -->
+      <!-- <button> рекомендуемый элемент управления для переключателя раскрывающегося списка, но если нужно использовать <a> элемент, стоит добавить role="button" атрибут для вспомогательных технологий -->
+      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- dropdown-toggle - класс кнопки выпадающего списка -->
+        Кнопка выпадаюшего списка
+      </button>
+      <ul class="dropdown-menu">
+        <li><h6 class="dropdown-header">Dropdown header</h6></li> <!-- Заголовок меню(нефункциональный элемент) -->
+        <p>просто текст в абзаце</p>
+        <li><a class="dropdown-item" href="#"> Link Action</a></li>
+        <li><button class="dropdown-item" type="button"> Button Action</button></li>
+        <!-- <a> или <button> используются в качестве раскрывающихся элементов -->
+        <li><a class="dropdown-item active" href="#" aria-current="true">Active action</a></li>
+        <!-- active делает элемент активным(не забываем добавить aria-current="true" для вспомогательных технологий) -->
+        <li><hr class="dropdown-divider"></li> <!-- линия разделитель -->
+        <li><a class="dropdown-item disabled" href="#">Separated link Disabled</a></li>
+        <!-- disabled - делает элемент отключенным -->
+      </ul>
+    </div>
+
+    <br><h5>Разделенная кнопка</h5>
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger">Action</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <!-- Для эффекта разделенной кнопки создаем онду страндартную кнопку и кнопку с классами dropdown-toggle dropdown-toggle-split -->
+      <ul class="dropdown-menu"> <li><a class="dropdown-item" href="#">Action</a></li> </ul>
+    </div>
+
+    <br><h5>Выпадающая форма</h5>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Dropdown form</button>
+      <form class="dropdown-menu p-4">
+        <div class="mb-3">
+          <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+            <label class="form-check-label" for="dropdownCheck2">Remember me</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+    </div>
+
+
+    <!--                                    Плагин JS Collapse(Сворачивающиеся элементы)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/collapse/  -->
+    <hr><center><h1>Плагин JS Collapse(Сворачивающиеся элементы)</h1></center><hr>
+    <!-- Плагин сворачивания JavaScript используется для отображения и скрытия контента. Кнопки или якоря используются в качестве триггеров, которые сопоставляются с определенными элементами, которые вы переключаете. Сворачивание элемента изменит текущее значение height на 0. -->
+
+    <p> <!-- Абзац для отступов -->
+      <!-- Рекомендуется использовать <button> с data-bs-target атрибутом для хэш ссылки(ссылки на id. так же при помощи этого атрибута можно ссыласться на класс тогда нужно добавить точку вместо символа хэша). Но также можно использовать <a> ссылку с href атрибутом (и role="button"). Значение хэш ссылки из data-bs-target/href атрибутов указывает на id скрываемого/раскрываемого collapse элемента -->
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+      <!-- data-bs-toggle="collapse" - позволяет открывать и закрывать блок с классом collapse -->
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <!-- collapse - скрывает содержимое; collapsing - применяется во время переходов; collapse show - по умолчанию показывает содержимое -->
+      <!-- В данный блок можно помещать любые элементы -->
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+
+    <br><h5>горизонтальная анимация колапса</h5>
+    <!-- Добавьте .collapse-horizontal класс модификатор для перехода width вместо height и установите width для непосредственного дочернего элемента -->
+    <p><button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Toggle width collapse</button></p>
+    <div style="min-height: 120px;"> <!-- добавляем если нужно оставить место, без этого будет двигать страницу -->
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+        </div>
+      </div>
+    </div>
+
+    <br><h5>Несколько переключателей и целей</h5>
+    <!-- Один элемент(button/a) может отображать и скрывать несколько элементов, ссылаясь на них с помощью селектора в его атрибуте(data-bs-target/href). И наоборот, несколько элементов(button/a) могут отображать и скрывать один и тот же элемент, если каждый из них ссылается на него с помощью своего атрибута(data-bs-target/href) -->
+    <p>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--                                    Создание модальных окон(modal.js)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/modal/  -->
+    <hr><center><h1>Создание модальных окон(modal.js)</h1></center><hr>
+    <!-- Модальные окна  располагаются поверх всего остального в документе и удаляют прокрутку, чтобы вместо этого прокручивалось модальное содержимое. Щелчок по модальному «фону» автоматически закроет модальное окно. Bootstrap поддерживает одновременно только одно модальное окно. Вложенные модальные окна не поддерживаются. Модальные окна используют position: fixed. По возможности размещайте свой модальный HTML на верхнем уровне, чтобы избежать возможных помех от других элементов. Скорее всего, вы столкнетесь с проблемами при вложении modal в другой фиксированный элемент. -->
+
+    <!-- Кнопка открывающая модальное окно -->
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <!-- data-bs-toggle - обязательный атрибут со значением "modal" - делает так что кнопка открывает модальное окно -->
+      <!-- data-bs-target - обязательный атрибут с хэш ссылкой на id модального окна для этой кнопки -->
+      Открыть модальное окно
+    </button>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- modal - класс модального окна/блока -->
+      <!-- fade - класс для плавности(анимации) открытия модального окна -->
+      <!-- tabindex="-1" - позволяет закрывать модальное окно клавишей Esc(эскейп) -->
+      <div class="modal-dialog modal-lg">
+        <!-- При помощи блока с классом modal-dialog устанавливаем ширину и отступы для модального окна -->
+        <!-- modal-sm/modal-lg - уменьшение/увеличение относительной ширины модального окна -->
+        <div class="modal-content">
+          <!-- modal-content - стили модального окна(тени, границы итд) -->
+          <div class="modal-header"> <!-- Блок шапки модального окна -->
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <!-- modal-title - класс заголовка окна -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- btn-close - визуал закрывающей кнопки в виде крестика -->
+            <!-- data-bs-dismiss="modal" - обязательный атрибут для того чтобы кнопка закрывала окно -->
+          </div>
+          <div class="modal-body">
+            <!-- modal-body - класс основной части модального окна -->
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="modal-footer"> <!-- modal-footer - класс футера модального окна -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--                                Меню навигации. Создание вкладок, табов (tabs.js)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/navs-tabs/  -->
+    <hr><center><h1>Меню навигации. Создание вкладок, табов (tabs.js)</h1></center><hr>
+
+    <br><h5>Меню навигации</h5>
+    <ul class="nav justify-content-center">
+      <!-- nav класс создан с помощью flexbox и обеспечивает основу для создания всех типов навигационных компонентов -->
+      <!-- justify-content-(center/end) - горизонтальное выравнивание(flexbox). По умолчанию выровнена по левому краю -->
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <!-- Базовый nav компонент не включает никакого active состояния, соотв этот класс не запускает никаких специальных стилей. Чтобы передать активное состояние вспомогательным технологиям, используйте aria-current атрибут — используя page значение для текущей страницы или true для текущего элемента в наборе. -->
+      </li>
+      <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+      <li class="nav-item"> <a class="nav-link disabled">Disabled</a> </li>
+    </ul>
+
+    <br><h5>Меню навигации из тега nav</h5>
+    <!-- Можно использовать <ul>, <ol> если порядок элементов важен, или <nav>. Поскольку .nav использует display: flex, ссылки навигации ведут себя так же, как и элементы навигации, но без дополнительной разметки. -->
+    <nav class="nav">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link disabled">Disabled</a>
+    </nav>
+
+    <br><h5>Вертикальная навигация</h5>
+    <ul class="nav flex-column">
+      <!-- Полезно для адаптивных версий, например flex-sm-column -->
+      <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Active</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+      <li class="nav-item"> <a class="nav-link disabled">Disabled</a> </li>
+    </ul>
+
+    <br><h5>Вкладки навигации</h5>
+    <!-- Берет базовую навигацию и добавляет nav-tabs класс для создания интерфейса с вкладками. Используйте их для создания областей с вкладками с помощью bootstrap плагина JavaScript для вкладок. В качестве основы так жн можно использовать <ul>, <ol> или <nav> -->
+    <ul class="nav nav-tabs"> <!-- Навигация -->
+      <!-- nav-tabs - стили вкладок навигации, так же можно использовать стили nav-pills, для того чтобы вкладки отображадись как кнопки, тогда в data-bs-toggle элементов нужно установиль значения pill -->
+      <!-- Для создания вкладок можно использовать как button(data-bs-target) так и a(href) которые будут отбращаться к соотв айди элементов контента -->
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-controls="home-tab-pane" aria-selected="true">Home</a>
+        <!-- data-bs-toggle="tab" - обязательный атрибут обозначающий элемент вкладкой -->
+        <!-- aria-selected="true" - открыта по умолчанию? -->
+        <!-- active - активная вкладка -->
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#disabled" type="button" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+      </li>
+    </ul>
+    <div class="tab-content"> <!-- Контент -->
+      <div class="tab-pane fade show active" id="home">Домашняя</div>
+      <!-- fade - класс для плавной анимации вкладок -->
+      <!-- show active - классы для отображения контента активной вкладки(show нужно только если есть класс fade) -->
+      <div class="tab-pane fade" id="contact">Контакты</div>
+      <div class="tab-pane fade" id="disabled">Отключенная</div>
+    </div>
+
+    <!-- Так же в докумментации есть различные стили раположения включения выпадающих списков итд -->
+
+
+    <!--                                Всплывающие подсказки (tooltip.js)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/tooltips/ -->
+    <hr><center><h1>Всплывающие подсказки (tooltip.js)</h1></center><hr>
+
+    <!-- ПРОЙТИ ПОСЛЕ ДЖАВАСКРИПТ ИЛИ ДЖЭЙКВЕРИ -->
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--  -->

@@ -1,0 +1,133 @@
+<!--                                        Flexbox(позиционирование блоков) -->
+
+<!-- Flexbox свойства позволяют позиционировать блоки адаптивно под разные размеры и типы экранов, не высчитывать их ширину и отступы, что в лучшую(меньше сложностей) сторону отличает его от позиционирования float. Позволяет легко менять очередность элементов в css коде не изменяя html. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox(позиционирование блоков)</title>
+    <link rel="stylesheet" href="css/4flexbox.css">
+  </head>
+
+  <body>
+
+    <div class="container-1"> <!-- блок с блоками к которому применим Flexbox -->
+      <div class="box-1">
+        <h3>Box 1-1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box-2">
+        <h3>Box 1-2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box-3">
+        <h3>Box 1-3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="container-2"> <!-- еще блок с блоками к которому применим Flexbox -->
+      <div class="box">
+        <h3>Box 2-1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 2-2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 2-3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 2-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="container-3"> <!-- 3й блок с блоками к которому применим Flexbox -->
+      <div class="box">
+        <h3>Box 3-1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 3-2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 3-3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 3-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 3-5</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="box">
+        <h3>Box 3-6</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+
+    <h1>flex-basis</h1>
+
+    <div class="container-b">
+      <div class="basis1">1</div>
+      <div class="basis1">2</div>
+      <div class="basis1">3</div>
+      <div class="basis1">4</div>
+      <div class="basis1">5</div>
+    </div>
+
+    <div class="container-b">
+      <div class="basis2">1</div>
+      <div class="basis2">2</div>
+      <div class="basis2">3</div>
+      <div class="basis2">4</div>
+      <div class="basis2">5</div>
+    </div>
+
+    <ul class="container-b2">
+      <li class="flex flex1">
+        <p>auto</p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+      </li>
+      <li class="flex flex2">
+        <p>max-content</p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+      </li>
+      <li class="flex flex3">
+        <p>min-content</p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+      </li>
+      <li class="flex flex4">fit-content</li>
+      <li class="flex flex5">content</li>
+    </ul>
+
+    <h1>flex-grow flex-shrink</h1>
+
+    <div class="container-b">
+      <div class="basis2">1</div>
+      <div class="basis2 grow1">2</div>
+      <div class="basis2">3</div>
+      <div class="basis2">4</div>
+      <div class="basis2">5</div>
+    </div>
+
+    <div class="container-b">
+      <div class="basis2 grow5">1</div>
+      <div class="basis2">2</div>
+      <div class="basis2">3</div>
+      <div class="basis2">4</div>
+      <div class="basis2 grow10 shrink">5</div>
+    </div>
+
+  </body>
+
+</html>

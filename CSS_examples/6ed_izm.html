@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/6ed_izm.css">
+    <title>Единицы измерения в CSS</title>
+  </head>
+
+  <body>
+
+    <center><h1>A. Единицы измерения применительно к тексту</h1></center>
+
+    <!--            1. Пиксели   px  -->
+    <div class="box box-px">
+      <h2>Pixels</h2>
+      <p class="text-1">font-size:16px</p>
+      <p class="text-2">font-size:8px</p>
+      <div class="text-3">font-size:32px
+        <p class="text-4">font-size:32px наследуется</p>
+        <p class="text-5">наследование не мешает установить font-size:10px</p>
+      </div>
+    </div>
+
+    <!--           2. Проценты   %  -->
+    <div class="box box-percent">
+      <h2>Percent</h2>
+      <p class="text-1">font-size:100%</p>
+      <p class="text-2">font-size:50%</p>
+      <p class="text-3">font-size:200%</p>
+      <h3>вложенность</h3>
+      <p>Lorem <span>Lorem<span>Lorem</span></span></p>
+    </div>
+
+    <!--          3. Em -->
+    <div class="box box-em">
+      <h2>Em</h2>
+      <p class="text-1">font-size:1em</p>
+      <p class="text-2">font-size:0.5em</p>
+      <div class="text-3">font-size:2em
+        <p class="text-4">32px наследуется из объекта .text-3</p>
+        <p class="text-5">font-size:0.8em==25.6px 32px(text-3)**0.8 == 25.6px</p>
+      </div>
+      <h3>вложенность</h3>
+      <ul>
+        <li>1й уровень
+          <ul>
+            <li>2й уровень<ul><li>3й уровень<ul><li>4й уровень</li></ul></li><li>3й уровень</li></ul></li><li>2й уровень</li>
+          </ul>
+        </li>
+        <li>1й уровень</li>
+      </ul>
+    </div>
+
+    <!--          4. Rem -->
+    <div class="box box-rem">
+      <h2>Rem</h2>
+      <p class="text-1">font-size:1rem</p>
+      <p class="text-2">font-size:0.5rem</p>
+      <div class="text-3">font-size:2rem
+        <p class="text-4">32px наследуется из объекта .text-3</p>
+        <p class="text-5">font-size:0.8rem==12.8px 16px(root)**0.8 == 12.8px</p>
+      </div>
+      <h3>вложенность</h3>
+      <ul>
+        <li>Первый уровень
+          <ul><li>Второй уровень<ul><li>Третий уровень<ul><li>Четвертый уровень</li></ul></li></ul></li></ul>
+        </li>
+      </ul>
+    </div>
+
+    <!--         4+5. Использование Селектор псевдокласса корневого узла, Em и Rem при работе с медиазапросами -->
+    <div class="box box-em-rm-media">
+      <h3>em_rem_media</h3>
+      <p>Does your lorem ipsum text long for something a little fishier? Give our generator a try… it’s fishy!</p>
+      <ul><li>Lorem</li><li>Lorem</li><li>Lorem</li></ul>
+    </div>
+
+    <!--         6. VW/VH. -->
+    <div class="box box-vw-vh">
+      <h2>VW/VH</h2>
+      <p class="text-1">font-size:2vw</p>
+      <p class="text-2">font-size:2vh</p>
+      <p class="text-3">font-size:1.5vmax</p>
+      <div class="text-4">font-size:2.5vmin
+        <p class="text-5">Наследуется font-size:2.5vmin</p>
+        <p class="text-6">font-size:1.8vh не учитывает наследование</p>
+      </div>
+    </div>
+
+
+    <center><h1>B. Единицы измерения для: width, height, padding, margin, border-radius</h1></center>
+
+    <!--   padding em   -->
+    <h3>padding em</h3>
+    <div class="block-em">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+
+    <!--   buttons em size   -->
+    <h3>buttons em size</h3>
+    <button class="btn btn-xs">Кнопка маленькая</button>
+    <button class="btn btn-lg">Кнопка большая</button>
+
+    <!--   text padding margin em   -->
+    <h3>text padding margin em</h3>
+    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+    <!--   vmax vmin -->
+    <h3>vmax vmin</h3>
+    <div class="kvadrat"></div>
+
+
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+<!--  -->

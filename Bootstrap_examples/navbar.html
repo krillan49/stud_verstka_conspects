@@ -1,0 +1,101 @@
+<!--                               Bootstrap5. navbar - навигационные панели(например хедер или футер) -->
+<!--
+https://getbootstrap.com/docs/5.3/components/navbar/
+
+Панели навигации могут использовать классы .navbar-toggler, .navbar-collapse и , .navbar-expand{-sm|-md|-lg|-xl|-xxl}чтобы определить, когда их содержимое сворачивается за кнопку. В сочетании с другими утилитами вы можете легко выбрать, когда показывать или скрывать определенные элементы.
+Для панелей навигации, которые никогда не сворачиваются, добавьте .navbar-expand класс на панель навигации. Для панелей навигации, которые всегда рушатся, не добавляйте никаких .navbar-expand классов
+
+Укажите текущий элемент с помощью aria-current="page" для текущей страницы или aria-current="true" для текущего элемента в наборе.
+
+Поддерживаемый контент:
+Утилиты Flex и spacing для любых элементов управления и действий формы.
+.navbar-text - для добавления вертикально центрированных нефункциональных строк текста(просто текста в теге span).
+.collapse и .navbar-collapse - для группировки и скрытия содержимого панели навигации родительской точкой останова.
+Добавьте необязательный параметр .navbar-scroll, чтобы установить max-height и прокрутить расширенное содержимое панели навигации
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap5. navbar - навигационные панели(например хедер или футер)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- доп адаптивность для телефонов -->
+
+    <!-- Подключение Bootstrap стилей через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <!-- Не обязательно, но можно обернуть панель навигации в div .container чтобы центрировать ее на странице -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark"> <!-- <nav> обеспечивает доступность для вспомогательных технологий, если использовать <div>, то надо добавить role="navigation" на каждую панель навигации -->
+      <!-- navbar - общий класс обертка для навигационных панелей -->
+      <!-- navbar-expand{-sm|-md|-lg|-xl|-xxl} - класс адаптивности для свертывания и цветовых схем, определяет, когда содержимое сворачивается за кнопку: lg - значит, что все экраны меньше lg сворачиваются в кнопку -->
+      <!-- fixed-top/fixed-bottom/sticky-top/sticky-bottom - доп классы для фиксации наверху или внизу экрана. Фиксированные навигационные панели используют position: fixed, что означает, что они взяты из обычного потока DOM и могут потребовать специального CSS(например, padding-top на <body>), чтобы предотвратить перекрытие с другими элементами. -->
+      <!-- bg-(dark/primary/...) - цвет фона. bg-body-tertiary - цвет фона по умолчанию. Можно прописать свой стиль в style -->
+      <!-- data-bs-theme="dark" - меняет цвета элементов(шрифты обводки) на те что лучше подходят под темный фон -->
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">
+        <!-- navbar-brand - класс для текстового логотипа или названия проекта. Так же сюда можно поместить изображение -->
+          <img src="https://i.pinimg.com/originals/b9/05/3d/b9053d873e9f69058997913e0fffca2e.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> <!-- картинка логотипа -->
+          Navbar
+        </a>
+
+        <!--         Кнопка за которую все сворачивается -->
+        <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- navbar-toggler - для использования с плагином сворачивания и другими функциями переключения навигации. Делает кнопку невидимой до необходимого размера экрана(указанного в navbar-expand), позиционирует ее и добавляет доп стили к внутреннему элементу -->
+          <!-- bg-warning - меняем фон кнопки -->
+          <!-- data-bs-toggle="collapse" - кнопка отвечает за раскрытие collapse объекта -->
+          <!-- data-bs-target="#content" - ссылка прикрепления к id collapse объекта который будем открывать этой кнопкой -->
+          <span class="navbar-toggler-icon"></span>
+          <!-- navbar-toggler-icon - класс стиля основного визуала кнопки из 3х линий -->
+        </button>
+
+        <div class="collapse navbar-collapse" id="content">
+          <!-- navbar-collapse - класс размещающий элементы на навигационной панели, когда она свернута(collapse по умолчанию), те размер экрана такой когда кнопка разворачивания не отображается и соотв все элементы доступны по умолчанию на панели -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- navbar-nav - для полноразмерной и облегченной навигации(включая поддержку раскрывающихся списков/стили меню для списка). -->
+            <!-- me-auto - margin-end-auto соотв прижимает влево(ms-auto - вправо) -->
+            <!-- mb-2 mb-lg-0 - разные стили для отступов -->
+            <li class="nav-item">
+              <!-- nav-item - класс элемента меню. Не обязательно добавлять тег li, а можно просто добавить первым классом ссылке nav-item -->
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <!-- nav-link - стили ссылки для меню -->
+              <!-- active - по умолчанию активный(как при наведении по умолчанию) элемент -->
+            </li>
+            <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+            <li class="nav-item dropdown"> <!-- Выпадающий список -->
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"> <a class="nav-link disabled">Disabled</a> </li>
+            <!-- disabled - по умолчанию отключенный(неактивный) элемент -->
+          </ul>
+          <form class="d-flex" role="search">
+            <!-- d-flex - размещает элементы в линию(flexbox) -->
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+        </div>
+
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- Подключение Bootstrap js-скриптов через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+
+<html>
