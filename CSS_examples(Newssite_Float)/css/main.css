@@ -304,7 +304,7 @@ form #send:hover {background-color: #7feb6d;}
 
 
 
-/* Социальный блок */
+/* Социальный блок c фоновой картинкой */
 #main_soc_block {
   width: 100%;
   padding: 2% 0;
@@ -312,7 +312,8 @@ form #send:hover {background-color: #7feb6d;}
   border-top: 2px solid silver;
   margin: 20px 0;
   float: left;
-  background-image: url('../img/bac.jpg');
+  background: #ff77aa url('../img/pic3.jpg');
+  background-blend-mode: multiply;
   height: 200px;
 }
 
