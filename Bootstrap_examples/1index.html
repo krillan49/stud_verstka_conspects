@@ -402,7 +402,8 @@ https://getbootstrap.com/ -> Include via CDN -> копируем строку (�
 
       <h6 class="text-info"><i>г. селектор</i></h6>
 
-      <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+      <label class="form-select-label" for="select1">Select1</label>
+      <select class="form-select form-select-lg mb-3" aria-label="Default select example" id="select1">
       <!-- form-select - класс для селектора(не нужен доп div ??) -->
       <!-- form-select-(lg/md/sm) - классы для размера селектора -->
         <option selected>Open this select menu</option>
@@ -511,7 +512,7 @@ https://getbootstrap.com/ -> Include via CDN -> копируем строку (�
     <br><h5>Основные стили карточек</h5>
     <div class="card w-25 text-bg-secondary border-danger" style="width: 18rem;">
       <!-- card - класс карточки -->
-      <!-- w-25 - универсальный класс-утилита для задания ширины -->
+      <!-- w-25 - универсальный класс-утилита для задания ширины, со значением auto растянет на всю ширину мат объекта -->
         <!-- Так же ширину можно задать отдельным стилем style="width: 18rem;" -->
       <!-- text-bg-secondary - цветовой стиль -->
       <!-- border-danger - цветовой стиль обводки -->
