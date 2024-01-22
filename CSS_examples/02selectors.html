@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML + CSS</title>
+
+    <link rel="stylesheet" href="css/02selectors.css" media="all">
+
+  </head>
+
+  <body>
+
+    <!--                                    Селекторы для выборки элементов(клаасы и идентификаторы) -->
+
+    <!--     1. Выбор по имени/типу тега(стиль присваивается всем таким тегам)  -->
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+
+    <!--     2. Выбор по классу(Удобен тем что можно привоить стили группе различных конкретных тегов) -->
+    <p>Lorem ipsum dolor sit amet, <i class="main_text">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <b class="main_text">minim veniam</b>, quis nostrud exercitation ullamco <b>laboris</b> nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- class - атрибут для любого тега, значением которого можно задавать стили в CSS фаиле. Одно и то-же значение клааса можно прописывать для различных объектов -->
+
+    <!--     3. Выбор по идентификатору(Удобен для одиночных объектов, например шапка или футер) -->
+    <p id="text_in_p">Lorem ipsum dolor sit amet, <i id="i_text_in_p">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <b id="b_text_in_p">minim veniam</b>, quis nostrud exercitation ullamco <b class="main_text">laboris</b> nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- id - атрибут для любого тега, значением которого можно задавать стили в CSS фаиле. id должен быть уникальным для кадого объекта на одной странице, если будет не уникальным то все равно будет работать, но это будет считаться грубой ошибкой -->
+
+    <!--     4. Выбор по вложенным селекторам  -->
+    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <b>sed do eiusmod</b> tempor</p></div>
+
+    <!--     4а. Вложение различных типов селекторов выбора -->
+    <p class="some_text">Some text</p>
+
+    <!--     5. Группировка различных селекторов выбора   -->
+    <div>
+      <p>Lorem ipsum dolor sit amet, <i id="div_text_in_p">consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Ut enim ad <b>minim veniam</b>, quis nostrud exercitation ullamco <big class="any_text">laboris</big> nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <!--     6. Мультиклассы(два и более класса селекторов)  -->
+    <p class="a b">rfrjqnj ntrcn</p> <!-- Если писать через пробел то объекту присвоится 2 класса сразу -->
+    <p class="a">lheujq ntrcn</p>
+    <p class="b">nhtnbq ntrcn</p>
+
+    <!--     7. Выбор по наличию атрибута -->
+    <p name="bottomOfPage">Lorem ipsum dolor sit amet.</p>
+    <p name="some_name">Lorem ipsum dolor sit amet.</p>
+    <div name="div_name">Lorem ipsum dolor sit amet</div>
+
+    <!--    8. Дочерние селекторы -->
+    <div id="example">
+    	Lorem ipsum dolor sit amet, <i>consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i>Ut</i> enim ad minim veniam. <span>Lorem <i>ipsum</i> dolor sit amet.</span> <!-- Стили применяются ко всем тегам i вложенным в тег div кроме вложенных в другие теги(тут span)-->
+    </div>
+
+    <!--   9. Соседние селекторы -->
+    <p>Lorem <span>ipsum dolor</span> sit amet, <b>consectetur</b> adipisicing elit, <b>sed do</b> eiusmod tempor incididunt ut labore et dolore <span>magna aliqua.</span> Ut enim ad minim veniam</p> <!-- Стили присвоятся только тем селекторам b что идут сразу за селектором span -->
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
