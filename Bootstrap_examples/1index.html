@@ -568,7 +568,9 @@ https://getbootstrap.com/ -> Include via CDN -> копируем строку н
     <!-- сделаны интерактивными с помощью прилагаемого плагина JavaScript с раскрывающимся списком Bootstrap. Они переключаются щелчком, а не зависанием -->
 
     <div class="dropdown">
-    <!-- dropdown - класс выпадающего списка, выпадающий вниз. dropdown - список выпадает прижатым от левого края; dropdown-center - список выпадает центрированно -->
+    <!-- dropdown - класс выпадающего списка, выпадающий вниз:
+      dropdown        - список выпадает прижатым от левого края кнопки;
+      dropdown-center - список выпадает центрированно относительно кнопки -->
     <!-- dropup и другие классы выпадающих списков выпадают в других направлениях -->
       <!-- <button> рекомендуемый элемент управления для переключателя раскрывающегося списка, но если нужно использовать <a> элемент, стоит добавить role="button" атрибут для вспомогательных технологий -->
       <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -596,6 +598,7 @@ https://getbootstrap.com/ -> Include via CDN -> копируем строку н
       <!-- Для эффекта разделенной кнопки создаем онду страндартную кнопку и кнопку с классами dropdown-toggle dropdown-toggle-split -->
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action2</a></li>
       </ul>
     </div>
 
@@ -635,18 +638,19 @@ https://getbootstrap.com/ -> Include via CDN -> копируем строку н
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
     </p>
     <div class="collapse" id="collapseExample">
-      <!-- collapse - скрывает содержимое; collapsing - применяется во время переходов; collapse show - по умолчанию показывает содержимое -->
-      <!-- В данный блок можно помещать любые элементы -->
-      <div class="card card-body">
-        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      <!-- collapse - скрывает содержимое;
+           collapsing - применяется во время переходов;
+           collapse show - по умолчанию показывает содержимое -->
+      <div class="card card-body"> <!-- В данный блок можно помещать любые элементы -->
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when.
       </div>
     </div>
 
     <br><h5>горизонтальная анимация колапса</h5>
-    <!-- Добавьте .collapse-horizontal класс модификатор для перехода width вместо height и установите width для непосредственного дочернего элемента -->
     <p><button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Toggle width collapse</button></p>
     <div style="min-height: 120px;"> <!-- добавляем если нужно оставить место, без этого будет двигать страницу -->
       <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <!-- collapse-horizontal - класс модификатор для перехода width вместо height и установите width для непосредственного дочернего элемента -->
         <div class="card card-body" style="width: 300px;">
           This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
         </div>
