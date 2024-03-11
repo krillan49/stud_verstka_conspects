@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                  Создание форм и полей(стили для форм и полей)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/forms/overview/ -->
+    <hr><center><h1>Создание форм и полей(стили для форм и полей)</h1></center><hr>
+
+    <h5>Основные стили форм</h5>
+    <form>
+
+      <h6 class="text-info"><i>а. поле для почты</i></h6> <!-- просто заголовки для красоты -->
+
+      <div class="mb-3"> <!-- каждое поле(с его описанием подсказками итд) в бутстрап должны быть помещены в отдельный блок -->
+      <!-- mb-3  = margin botom 3 -->
+        <label for="input_email" class="form-label">Email address</label>
+          <!-- form-label - класс для label для поля -->
+        <input type="email" class="form-control" id="input_email" aria-describedby="email_help">
+          <!-- form-control - класс задающий стили для поля(делает на всю ширину родительского объекта на новую строку итд. Соотв если нужно ограничить можно поместить в блок с классом контейнер) -->
+          <!-- aria-describedby="email_help" - связываем поле с id текстом формы(для вспомогательных технологий) -->
+        <div id="email_help" class="form-text">We'll never share your email with anyone else.</div>
+          <!-- form-text - класс для текста подсказки для поля. Встроенный текст может использовать любой типичный встроенный элемент HTML (будь то <span>, <small>или что-то еще) только с .form-text классом -->
+      </div>
+
+      <h6 class="text-info"><i>б. поле для пароля</i></h6>
+
+      <div class="mb-3">
+        <label for="input_password" class="form-label">Password</label>
+        <input type="password" class="form-control form-control-lg is-invalid" id="input_password">
+        <!-- form-control-(lg/md/sm) - классы для размера поля -->
+        <!-- is-(invalid/) - класс изменения цвета обводки поля -->
+      </div>
+
+      <h6 class="text-info"><i>в. чекбокс</i></h6>
+
+      <div class="mb-3 form-check"> <!-- form-check - доп класс стилей для элементов чекбокса -->
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <!-- form-check-label и form-check-input - доп классы стилей для чекбокса -->
+      </div>
+
+      <h6 class="text-info"><i>г. селектор</i></h6>
+
+      <label class="form-select-label" for="select1">Select1</label>
+      <select class="form-select form-select-lg mb-3" aria-label="Default select example" id="select1">
+      <!-- form-select - класс для селектора(не нужен доп div ??) -->
+      <!-- form-select-(lg/md/sm) - классы для размера селектора -->
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+
+      <h6 class="text-info"><i>д. элемент формы в линию при помощи системы сеток</i></h6>
+
+      <div class="row g-3 align-items-center"> <!-- Используем стили бутстрап-сеток чтобы расположить элементы формы в одну линию, такой элемент формы можно тоже помещать в форму -->
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">Must be 8-20 characters long.</span>
+        </div>
+      </div>
+
+      <h6 class="text-info"><i>е. простой текст только для чтения</i></h6>
+
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label> <!-- класс сетки прямо в label -->
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+        </div>
+      </div>
+
+      <h6 class="text-info"><i>ж. кнопка</i></h6>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <!-- Итд остальные элементы в документации -->
+    </form>
+
+    <br><h5>Неактивная форма</h5>
+    <form>
+      <fieldset disabled> <!-- Таким образом деактивируем форму -->
+        <div class="mb-3">
+          <label for="disabledTextInput" class="form-label">Disabled input</label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+        </div>
+        <div class="mb-3">
+          <label for="disabledSelect" class="form-label">Disabled select menu</label>
+          <select id="disabledSelect" class="form-select">
+            <option>Disabled select</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+            <label class="form-check-label" for="disabledFieldsetCheck">Can't check this</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Disabled Submit</button>
+      </fieldset>
+    </form>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

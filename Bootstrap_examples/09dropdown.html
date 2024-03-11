@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                  Выпадающее меню и списки  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/dropdowns/  -->
+    <hr><center><h1>Выпадающее меню и списки</h1></center><hr>
+    <!-- сделаны интерактивными с помощью прилагаемого плагина JavaScript с раскрывающимся списком Bootstrap. Они переключаются щелчком, а не зависанием -->
+
+    <div class="dropdown">
+    <!-- dropdown - класс выпадающего списка, выпадающий вниз:
+      dropdown        - список выпадает прижатым от левого края кнопки;
+      dropdown-center - список выпадает центрированно относительно кнопки -->
+    <!-- dropup и другие классы выпадающих списков выпадают в других направлениях -->
+      <!-- <button> рекомендуемый элемент управления для переключателя раскрывающегося списка, но если нужно использовать <a> элемент, стоит добавить role="button" атрибут для вспомогательных технологий -->
+      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- dropdown-toggle - класс кнопки выпадающего списка -->
+        Кнопка выпадаюшего списка
+      </button>
+      <ul class="dropdown-menu">
+        <li><h6 class="dropdown-header">Dropdown header</h6></li> <!-- Заголовок меню(нефункциональный элемент) -->
+        <p>просто текст в абзаце</p>
+        <li><a class="dropdown-item" href="#"> Link Action</a></li>
+        <li><button class="dropdown-item" type="button"> Button Action</button></li>
+        <!-- <a> или <button> используются в качестве раскрывающихся элементов -->
+        <li><a class="dropdown-item active" href="#" aria-current="true">Active action</a></li>
+        <!-- active делает элемент активным(не забываем добавить aria-current="true" для вспомогательных технологий) -->
+        <li><hr class="dropdown-divider"></li> <!-- линия разделитель -->
+        <li><a class="dropdown-item disabled" href="#">Separated link Disabled</a></li>
+        <!-- disabled - делает элемент отключенным -->
+      </ul>
+    </div>
+
+    <br><h5>Разделенная кнопка</h5>
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger">Action</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <!-- Для эффекта разделенной кнопки создаем онду страндартную кнопку и кнопку с классами dropdown-toggle dropdown-toggle-split -->
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action2</a></li>
+      </ul>
+    </div>
+
+    <br><h5>Выпадающая форма</h5>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Dropdown form</button>
+      <form class="dropdown-menu p-4">
+        <div class="mb-3">
+          <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+            <label class="form-check-label" for="dropdownCheck2">Remember me</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+    </div>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

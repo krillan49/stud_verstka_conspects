@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                Меню навигации. Создание вкладок, табов (tabs.js)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/navs-tabs/  -->
+    <hr><center><h1>Меню навигации. Создание вкладок, табов (tabs.js)</h1></center><hr>
+
+    <br><h5>Меню навигации</h5>
+    <ul class="nav justify-content-center">
+      <!-- nav класс создан с помощью flexbox и обеспечивает основу для создания всех типов навигационных компонентов -->
+      <!-- justify-content-(center/end) - горизонтальное выравнивание(flexbox). По умолчанию выровнена по левому краю -->
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <!-- Базовый nav компонент не включает никакого active состояния, соотв этот класс не запускает никаких специальных стилей. Чтобы передать активное состояние вспомогательным технологиям, используйте aria-current атрибут — используя page значение для текущей страницы или true для текущего элемента в наборе. -->
+      </li>
+      <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+      <li class="nav-item"> <a class="nav-link disabled">Disabled</a> </li>
+    </ul>
+
+    <br><h5>Меню навигации из тега nav</h5>
+    <!-- Можно использовать <ul>, <ol> если порядок элементов важен, или <nav>. Поскольку .nav использует display: flex, ссылки навигации ведут себя так же, как и элементы навигации, но без дополнительной разметки. -->
+    <nav class="nav">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link disabled">Disabled</a>
+    </nav>
+
+    <br><h5>Вертикальная навигация</h5>
+    <ul class="nav flex-column">
+      <!-- Полезно для адаптивных версий, например flex-sm-column -->
+      <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Active</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+      <li class="nav-item"> <a class="nav-link disabled">Disabled</a> </li>
+    </ul>
+
+    <br><h5>Вкладки навигации</h5>
+    <!-- Берет базовую навигацию и добавляет nav-tabs класс для создания интерфейса с вкладками. Используйте их для создания областей с вкладками с помощью bootstrap плагина JavaScript для вкладок. В качестве основы так же можно использовать <ul>, <ol> или <nav> -->
+    <ul class="nav nav-tabs"> <!-- Навигация -->
+      <!-- nav-tabs - стили вкладок навигации, так же можно использовать стили nav-pills, для того чтобы вкладки отображадись как кнопки, тогда в data-bs-toggle элементов нужно установиль значения pill -->
+      <!-- Для создания вкладок можно использовать как button(data-bs-target) так и a(href) которые будут отбращаться к соотв айди элементов контента -->
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-controls="home-tab-pane" aria-selected="true">Home</a>
+        <!-- data-bs-toggle="tab" - обязательный атрибут обозначающий элемент вкладкой -->
+        <!-- aria-selected="true" - открыта по умолчанию? -->
+        <!-- active - активная вкладка -->
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#disabled" type="button" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+      </li>
+    </ul>
+    <div class="tab-content"> <!-- Контент -->
+      <div class="tab-pane fade show active" id="home">Домашняя</div>
+      <!-- fade - класс для плавной анимации вкладок -->
+      <!-- show active - классы для отображения контента активной вкладки(show нужно только если есть класс fade) -->
+      <div class="tab-pane fade" id="contact">Контакты</div>
+      <div class="tab-pane fade" id="disabled">Отключенная</div>
+    </div>
+
+    <!-- Так же в докумментации есть различные стили раположения включения выпадающих списков итд -->
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

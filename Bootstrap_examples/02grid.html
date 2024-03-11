@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                   Bootstrap-Grid система (система сеток) -->
+
+    <!-- https://getbootstrap.ru/docs/5.1/layout/grid/ -->
+    <hr><center><h1>Bootstrap-Grid система (система сеток)</h1></center><hr>
+    <!-- За счёт системы сеток можно располагать объекты в один ряд, делать объекты адаптивными, а также указывать общую структуру расположения объектов на сайте.-->
+
+    <div class="container-fluid">
+    <!-- container-fluid - контейнер растянется на всю ширину экрана -->
+      <h5>Блок с 3мя блоками-столбцами на всю ширину экрана и отступом</h5>
+      <div class="row">
+      <!-- row - класс создающий ряд в который мы разместим столбцы -->
+        <div class="col-md-3" style="background-color: #ff9999">
+        <!-- col - класс создающий столбец помещается в row. Если нужны равные по размеру столбцы размер можно не указывать -->
+        <!-- col-auto - длинна будет равна длинне контента -->
+        <!-- Классы для столбцов:
+          xm - экстра смалл(например под смартфоны);
+          sm - смолл, маленький например для планшетов;
+          md - мидл под небольшие ноутбуки и лэптопы;
+          lg - лардж под большие мониторы(27 дюймов например).
+        -->
+        <!-- 1..12 - размер столбца в сетке. В системе сеток Bootstrap может быть максимум 12 столбцов и их 12 по умолчанию, столбцы можно объединять увеличивая их относительный размер как число частей от 12. Если столбцы превышают суммарную 12 в ряду, то лишние столбцы смещаются в новый ряд -->
+          Left
+        </div>
+        <div class="offset-md-3 col-md-3" style="background-color: #99ccff">Middle</div>
+        <!-- offset-md-3 - класс оступа с размером(тут будет занимать 4ю, 5ю и 6ю колонки) и размером экрана. -->
+        <div class="col-md-3" style="background-color: #00cc99">Right</div>
+      </div>
+      <!-- Тут мы создали адаптивную сетку из 3х блоков, которые будут подстраиваться под размер экрана(на определенном размере(под планшеты/телефоны) еще и выстраиваются в один ряд вместо столбцов)-->
+    </div>
+
+    <div class="container"> <!-- не растягиваем блок на всю ширину экрана оставляя его предварительно заданный размер, по умолчанию он будет центрирован -->
+      <h5>Блок фиксированного размера с 4мя блоками-столбцами разных размеров</h5>
+      <div class="row">
+        <!-- Задаем блокам разные размеры(если не задать размер то он будет переменной ширины) -->
+        <div class="col-md-1" style="background-color: #999922; color: #fff;">One</div>
+        <div class="col-md-2" style="background-color: #229999; color: #fff;">Two</div>
+        <div class="col-md-3" style="background-color: #bb2222; color: #fff;">Three</div>
+        <div class="col-md-6" style="background-color: #992299; color: #fff;">Six</div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h5>Адаптивный блок-сетка с конкретными значениями для каждого размера экрана</h5>
+      <div class="row">
+        <!-- Задаем блокам разные размеры для обоих колонок под каждый тип экрана(Задаем брэйкпоинты) -->
+        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #00ccff; color: #fff;">Первый</div>
+        <div class="col-xs-12 col-sm-3 col-md-8 col-lg-6" style="background-color: #cc00ff; color: #fff;">Второй</div>
+        <!-- Теперь: для lg колонки будут 6+6; md 4+8; sm 9+3; а для xs полноразмерные колонки будут занимать каждая по ряду. Размеры больше указанных будут соотв самому большому из указанных, размеры меньше указанных будут равны 12, так что col-xs-12 можно было не указывать -->
+      </div>
+
+      <h5>Изменение очередности колонок местами</h5>
+      <!-- order-(1..5) класс для управления визуальным порядком контента. Можно установить order по контрольной точке (например, .order-1.order-md-2). Включает поддержку от 1 до 5 на всех шести уровнях сетки. Существуют также адаптивные классы .order-first и .order-last, которые изменяют order элемента, применяя order: -1 и order: 6. Эти классы также могут быть при необходимости смешаны с пронумерованными классами .order-*. -->
+      <div class="row">
+        <div class="col-md-3" style="background-color: #cc3399; color: #fff;">Первый в DOM, порядок не применяется</div>
+        <div class="col-md-3 order-5" style="background-color: #9933cc; color: #fff;">Второй в DOM, с 5 порядком</div>
+        <div class="col-md-6 order-1" style="background-color: #cc9933; color: #fff;">Третий в DOM, с 1 порядком</div>
+      </div>
+    </div>
+
+    <h5>Вложенные сетки</h5>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3" style="background-color: #cc3399; color: #fff;">Первый</div>
+        <div class="col-md-3" style="background-color: #9933cc; color: #fff;"> <!-- Если убираем контент из материнской колонки тогда вложенная сетка займет все пространство колонки(если нет в другой колонке вложенной сетки разделяющей колонку, так вложенная сетка тут будет в верхней половине наверно надо добавить max-height) -->
+          <div class="row"> <!-- для вложенной сетки просто добавляем ее в колонку материнской сетки -->
+            <div class="col-md-6" style="background-color: #3333bb; color: #fff;">Первый вложенный</div>
+            <div class="col-md-6" style="background-color: #bb33bb; color: #fff;">Второй вложенный</div>
+          </div>
+        </div>
+        <div class="col-md-6" style="background-color: #cc9933; color: #fff;">Третий <!-- Если отставляем контент в материнской колонке, тогда он займет верхний подряд мат колонки а вложенная сетка нижний -->
+          <div class="row">
+            <div class="col-md-5" style="background-color: #333333; color: #fff;">Первый вложенный</div>
+            <div class="col-md-7" style="background-color: #888888; color: #fff;">Второй вложенный</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

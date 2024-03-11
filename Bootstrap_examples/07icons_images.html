@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                  Иконочный шрифт и изображения  -->
+
+    <!-- https://icons.getbootstrap.com/ иконки бутстрап -->
+    <!-- https://glyphicons.com/ отдельно иконочный шрифт -->
+    <!-- https://fontawesome.ru/ доп фрэймворк для иконок(отдельный(похоже уже встроен в бутстрап) от бутстрап работает похоже на бутстрап) -->
+    <hr><center><h1>Иконочный шрифт и изображения</h1></center><hr>
+    <!-- Иконочный шрифт необходимо подключить отдельно от основных стилей бутстрап -->
+
+    <h5>Иконочный шрифт bootstrap</h5>
+    <i class="bi bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+    <!-- bi - класс иконочного шрифта  -->
+    <!-- alarm - класс конкретной иконки. Найти другие можно на https://getbootstrap.ru/docs/icons -->
+    <!-- тк это шрифт а не картинка то можно добавлять текстовые стили и качество не будет падать при изменении масштаба -->
+    <span class="bi bi-app-indicator" style="font-size: 3rem; color: red;"></span> <!-- Так же можно использовать тег span -->
+
+    <h6><i>Кнопка с иконкой</i></h6>
+    <button class="btn btn-success">
+      <span class="bi bi-arrow-through-heart"></span> Все хорошо
+    </button>
+
+    <br><br><h5>Значки/стикеры</h5> <!-- https://getbootstrap.com/docs/5.0/components/badge/ -->
+    <!-- Значки масштабируются в соответствии с размером непосредственного родительского элемента с использованием относительного размера шрифта и eдиниц измерения. Можно интегрировать в кнопки другие элементы итд -->
+    <h3>Example heading <span class="badge bg-secondary">New</span></h3> <!-- Только тег span -->
+    <!-- badge - класс стикеров -->
+    <!-- bg-secondary - класс цвета -->
+    <h4>Example heading <span class="badge rounded-pill bg-danger">New</span></h4>
+    <!-- rounded-pill - скругление углов -->
+
+    <br><h5>Картинки(адаптивные)</h5> <!-- https://getbootstrap.com/docs/5.3/content/images/ -->
+    <img src="http://happymodern.ru/wp-content/uploads/2015/10/Proekti_karkasnih_domov_41-650x431.jpg" class="img-fluid img-thumbnail rounded">
+    <!-- img-fluid - делает картинку адаптивной max-width: 100%; и height: auto; -->
+    <!-- img-thumbnail - закругленная рамка вокруг картинки -->
+    <!-- rounded - закругляются края самой картинки -->
+    <img src="http://happymodern.ru/wp-content/uploads/2015/10/Proekti_karkasnih_domov_41-650x431.jpg" class="img-fluid float-end">
+    <!-- float-end - float right -->
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

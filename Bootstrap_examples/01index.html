@@ -1,0 +1,86 @@
+<!--                                         Bootstrap5(css фрэймворк) -->
+
+<!--
+=========================
+Пройти
+=========================
+1. https://getbootstrap.com/docs/5.0/utilities/display/  - отображение/сокрытие блоков на разных экранах(адаптив)
+2. font-size: 1.1em !important; /* !important чтобы наверняка перебить стили бутстрапа */
+-->
+
+<!--
+https://getbootstrap.com/
+
+Bootstrap(twitter bootstrap - тк придуман компанией разработчиком твитера) - фрэймворк для css(набор css стилей + немного джаваскрипта). При подключении соответсвующих css и js фаилов, зхаданные стили и скрипты будут автоматически осуществляться.
+
+Принцип работы с Bootstrap:
+- скачать или подключить Bootstrap при помощи CDN;
+- выполнить верстку сайта с помощью Bootstrap, используя подготовленные стили.
+
+Бутстрап если его скачивать занимет примерно 500кб(и css и js  фаилы), это не так мало и сайт может грузиться долго, поэтому для своего сайта нужно выбирать и скачивать только те опции которые нам нужны(например если на сайте нет открывающихся списков, то и добавлять их не нужно)
+
+== Подключение через CDN(удаленный сервер на которм находятся фаилы):
+https://getbootstrap.com/ -> Include via CDN -> копируем строку например <link href="https://cdn.js ...> в тело тега head в нашем HTML-erb фаиле. Далее копируем напимер из раздела https://getbootstrap.com/docs/5.2/components/buttons/ различные компоненты в необходимые нам строки в HTML фаиле и неоходимый стиль появится на нашем сайте.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- доп адаптивность для телефонов -->
+
+    <!-- Подключение Bootstrap стилей через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Подключение Bootstrap js-скриптов через CDN: https://getbootstrap.com/ -> Include via CDN ->  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- JQuary не актуально в bootstrap 5. Там нативный js -->
+
+    <!-- Подключение доп стилей для иконочного шрифта CDN: https://icons.getbootstrap.com/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Подключение https://fontawesome.ru/ (фрэймворк для иконок отдельный те не бутстрап) Его работу и подключение через скачивание можно посмотреть в site_examle_with_bootstrap_in_files -->
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- теперь элементы получают стили от bootstrap -->
+
+    <!-- отступы по умолчанию удалены -->
+
+    Просто текст  <!-- получил стили от bootstrap -->
+    <h4>Текст в h4</h4> <!-- получил стили от bootstrap -->
+
+    <div class="container">
+      <!-- container - класс блока некой изначально заданной фиксированной ширины с отступом(таким что блок центрирован). Если не использовать материнский класс container, то некоторые элементы(например сетка) могут вылезать за границы экрана и появится скролл -->
+      <h2>Текст в div(container) h2</h2>
+      <p>Текст в div(container) p</p>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

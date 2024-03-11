@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                    Создание модальных окон(modal.js)  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/modal/  -->
+    <hr><center><h1>Создание модальных окон(modal.js)</h1></center><hr>
+    <!-- Модальные окна  располагаются поверх всего остального в документе и удаляют прокрутку, чтобы вместо этого прокручивалось модальное содержимое. Щелчок по модальному «фону» автоматически закроет модальное окно. Bootstrap поддерживает одновременно только одно модальное окно. Вложенные модальные окна не поддерживаются. Модальные окна используют position: fixed. По возможности размещайте свой модальный HTML на верхнем уровне, чтобы избежать возможных помех от других элементов. Скорее всего, вы столкнетесь с проблемами при вложении modal в другой фиксированный элемент. -->
+
+    <!-- Кнопка открывающая модальное окно -->
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <!-- data-bs-toggle - обязательный атрибут со значением "modal" - делает так что кнопка открывает модальное окно -->
+      <!-- data-bs-target - обязательный атрибут с хэш ссылкой на id модального окна для этой кнопки -->
+      Открыть модальное окно
+    </button>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- modal - класс модального окна/блока -->
+      <!-- fade - класс для плавности(анимации) открытия модального окна -->
+      <!-- tabindex="-1" - позволяет закрывать модальное окно клавишей Esc(эскейп) -->
+      <div class="modal-dialog modal-lg">
+        <!-- При помощи блока с классом modal-dialog устанавливаем ширину и отступы для модального окна -->
+        <!-- modal-sm/modal-lg - уменьшение/увеличение относительной ширины модального окна -->
+        <div class="modal-content">
+          <!-- modal-content - стили модального окна(тени, границы итд) -->
+          <div class="modal-header"> <!-- Блок шапки модального окна -->
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <!-- modal-title - класс заголовка окна -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- btn-close - визуал закрывающей кнопки в виде крестика -->
+            <!-- data-bs-dismiss="modal" - обязательный атрибут для того чтобы кнопка закрывала окно -->
+          </div>
+          <div class="modal-body">
+            <!-- modal-body - класс основной части модального окна -->
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="modal-footer"> <!-- modal-footer - класс футера модального окна -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

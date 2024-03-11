@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                   Работа с текстом(стили для текста) -->
+
+    <hr><center><h1>Работа с текстом(стили для текста)</h1></center><hr>
+    <!-- Заголовки -->
+    <h2>Заголовок h2</h2>
+    <p class="h2">p class="h2" == Заголовок h2</p>
+    <!-- Стили для выделения части текста -->
+    <p>Просто текст в p<mark>Текст в mark в p</mark></p>
+
+    <p>Lorem ipsum <span class="lead">sit amet, consectetur adipisicing elit</span>, sed do eiusmod</p> <!-- lead - класс увеличивающий размер текста -->
+
+    <!-- Дополнительные большие размеры текста(или не только для текста?)(от 1 до 6, где 1 самый большой) -->
+    <h2 class="display-4">display-4</h2>
+    <p class="display-3">display-3</p>
+    <h6 class="display-2">display-2</h6>
+    <p class="display-1">display-1</p>
+
+    <!-- Позиционирование текста -->
+    <p class="text-start">class="text-start"(выравнивание слева)</p>
+    <p class="text-center">class="text-center"(выравнивание по центру)</p>
+    <p class="text-end">class="text-end"(выравнивание справа)</p>
+    <p class="text-justify">class="text-justify"(выравнивание по обоим краям)</p>
+    <p class="text-nowrap">class="text-nowrap"(без переноса строки)</p>
+    <div class="text-center"> <!-- подходит для всех текствовых элементов например для текстовых кнопок -->
+      <button type="button" class="btn btn-outline-success">Центрированная кнопка</button>
+    </div>
+
+    <!-- Цитата -->
+    <figure class="text-end">
+      <blockquote class="blockquote"> <!-- blockquote - класс стилей цитаты -->
+        <p>Известная цитата, содержащаяся в элементе цитаты</p>
+        <figcaption class="blockquote-footer"> <!-- blockquote-footer класс для автора цитаты -->
+          Кто-то, известный в <cite title="Source Title">названии источника</cite>
+        </figcaption>
+      </blockquote>
+    </figure>
+
+    <!-- Регистры текста -->
+    <p class="text-uppercase">uppercase</p>
+    <p class="text-lowercase">LoweRcaSe</p>
+    <p class="text-capitalize">capitalize</p>
+
+    <!-- Элементы кода и другие выделения -->
+    <code>each</code>, <code>map</code>, <code>select</code>
+
+    <br>Чтобы переключить каталоги, введите <kbd>cd</kbd>, а затем имя каталога.<br>
+    Чтобы изменить настройки, нажмите <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+
+    <!-- Цвета текста --> <br><br>
+    <p class="text-muted">text-muted</p>
+    <p class="text-primary">text-primary</p>
+    <p class="text-success">text-success</p>
+    <p class="text-info">text-info</p>
+    <p class="text-warning">text-warning</p>
+    <p class="text-danger">text-danger</p>
+
+    <!-- Цвета фона текста или фона блоков -->
+    <p><span class="bg-primary">text-primary</span></p>
+    <p class="bg-success">text-success</p>
+    <p><span class="bg-info">text-info</span></p>
+    <p class="bg-warning">text-warning</p>
+    <p><span class="bg-danger">text-danger</span></p>
+
+    <!-- блок с фоном и обводкой(типа карточки на минималках) -->
+    <div class="alert alert-danger">Ошибка</div>
+    <div class="alert alert-light">Сообщение</div>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

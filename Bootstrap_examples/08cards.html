@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
+
+    <style>
+      body { padding: 20px; }
+      h5 { color: #393a38; }
+    </style>
+  </head>
+
+  <body>
+
+    <!--                                         Текстовые панели/карточки  -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/card/ -->
+    <!-- Панели созданные на основе flexbox по сути просто блоки выделенные стилями предназначенные для изображений, текста, групп списков, ссылок и многого другого. Карточка — это гибкий и расширяемый контейнер содержимого. Он включает в себя параметры верхних и нижних колонтитулов -->
+    <hr><center><h1>Текстовые панели/карточки</h1></center><hr>
+
+    <br><h5>Основные стили карточек</h5>
+    <div class="card w-25 text-bg-secondary border-danger" style="width: 18rem;">
+      <!-- card - класс карточки -->
+      <!-- w-25 - универсальный класс-утилита для задания ширины, со значением auto растянет на всю ширину мат объекта -->
+        <!-- Так же ширину можно задать отдельным стилем style="width: 18rem;" -->
+      <!-- text-bg-secondary - цветовой стиль -->
+      <!-- border-danger - цветовой стиль обводки -->
+      <div class="card-header">Featured</div> <!-- хэдер если он нужен -->
+      <img src="https://img.quizur.com/f/img5c83d26d06ace2.52922329.png?lastEdited=1552142983" class="card-img-top" alt="дбз">
+      <!-- card-img-top - Картинка адаптивно занимает верхнюю часть карточки и скругления сверху -->
+      <div class="card-body">
+        <!-- card-body - класс основного пространства карточки или раздела если их несколько -->
+        <h5 class="card-title">Card title</h5> <!-- Заголовок -->
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> <!-- Подзаголовок -->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="card-link link-info">Another link</a>
+      </div>
+      <ul class="list-group list-group-flush"> <!-- Список помещается без body класса -->
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+      <div class="card-footer text-muted">2 days ago</div> <!-- Футер если нужен -->
+    </div>
+
+    <br><h5>Размещение карточек в сетке</h5>
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0"> <!-- Размещаем карточку в колонке сетки -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Так же есть группы карточек аналогично кнопкам и более сложные сетки -->
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
