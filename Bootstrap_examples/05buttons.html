@@ -22,40 +22,52 @@
     <!-- https://getbootstrap.ru/docs/5.1/components/buttons/ -->
     <hr><center><h1>Кнопки и группы кнопок(стили для кнопок)</h1></center><hr>
 
+
     <h5>Типы и цвета кнопок</h5>
     <button class="btn btn-light">Стандартная</button>
-      <!-- btn - класс задающий для бутстрап что это кнопка(можно применять к любому тегу) -->
-      <!-- btn-light - цветовой стиль кнопки. Стили цветов кнопок имеют аналогичное название со стилями текста или таблиц -->
+    <!-- btn - класс со стилями кнопки(можно применять к любому тегу) -->
+    <!-- btn-light - класс цветового стиля кнопки -->
+
     <!-- Класс btn так же можно применить к тегам input и a(а так же к другим тегам) -->
     <input type="submit" class="btn btn-primary" value="input">
-    <a href="#" class="btn btn-info" role="button">Ссылка в кнопку</a> <!-- стилизуем ссылку под кнопку -->
-      <!-- role - атрибут указывающий назначение элемента -->
-    <button class="btn btn-link">Кнопка в ссылку</button> <!-- btn-link стилизуем кнопку под ссылку -->
 
-    <h5>Кнопоки с цветом обводки и явным hover эффектом</h5>
+    <a href="#" class="btn btn-info" role="button">Ссылка в кнопку</a> <!-- стилизуем ссылку под кнопку -->
+    <!-- role - атрибут указывающий назначение элемента a -->
+
+    <button class="btn btn-link">Кнопка в ссылку</button>
+    <!-- btn-link - кдасс стилизует кнопку под ссылку -->
+
+
+    <h5 class="mt-3">Кнопоки с цветом обводки и явным hover эффектом</h5>
     <button type="button" class="btn btn-outline-success">Success</button>
     <button type="button" class="btn btn-outline-danger">Danger</button>
     <button type="button" class="btn btn-outline-warning">Warning</button>
 
-    <h5>Размеры кнопок</h5>
+
+    <h5 class="mt-3">Размеры кнопок</h5>
     <!-- Задаются при помощи стилей btn-(lg/md/sm) (md - по умолчанию) -->
     <button type="button" class="btn btn-primary btn-lg">Большая(lg) кнопка</button>
     <button type="button" class="btn btn-secondary btn-md">Средняя(md) кнопка(по умолчанию)</button>
     <button type="button" class="btn btn-dark btn-sm">Маленькая(sm) кнопка</button>
 
-    <h5>Блочные кнопки(со свойствами блока в отличие от строчных что выше)</h5>
+
+    <h5 class="mt-3">Блочные кнопки(со свойствами блока в отличие от строчных что выше)</h5>
     <div class="d-grid gap-2">
       <button class="btn btn-primary" type="button">Кнопка</button>
       <button class="btn btn-warning" type="button">Кнопка</button>
     </div>
 
-    <h5>Переключение состояния на нажатое/ненажатое и нажатое или неактивное по умолчанию</h5>
-    <!-- Добавьте data-bs-toggle="button" для переключения состояния active. Если Вы предварительно переключаете кнопку, вы должны вручную добавить класс .active и aria-pressed="true" чтобы гарантировать, что это будет правильно передано вспомогательным технологиям. -->
+
+    <h5 class="mt-3">Переключение состояния на нажатое/ненажатое и нажатое или неактивное по умолчанию</h5>
     <button type="button" class="btn btn-outline-dark" data-bs-toggle="button" autocomplete="off">Кнопка-переключатель</button>
+    <!-- data-bs-toggle="button" для переключения состояния на active и обратно -->
     <button type="button" class="btn btn-outline-dark active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Изначально активная кнопка-переключатель</button>
+    <!-- .active - класс для по умолчанию нажатого состояния кнопки  -->
+    <!-- aria-pressed="true" - чтобы гарантировать, что активный режим будет правильно передано вспомогательным технологиям -->
     <button type="button" class="btn btn-outline-dark" disabled data-bs-toggle="button" autocomplete="off">Отключенная кнопка-переключатель</button>
 
-    <h5>Группы кнопок</h5> <!-- https://getbootstrap.ru/docs/5.1/components/button-group/ -->
+
+    <h5 class="mt-3">Группы кнопок</h5> <!-- https://getbootstrap.ru/docs/5.1/components/button-group/ -->
     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
       <!-- btn-group - класс для группирования кнопок -->
       <!-- aria-label - атрибут описывающий что это за группа кнопок -->
@@ -64,16 +76,18 @@
       <button type="button" class="btn btn-success">Правая</button>
     </div>
 
-    <h5>Группа кнопок(из тега label) объединенная с флажком(checkbox)</h5>
+
+    <h5 class="mt-3">Группа кнопок(из тегов label) объединенная с флажком(checkbox)</h5>
     <div class="btn-group" role="group" aria-label="Базовая группа переключателей флажков">
       <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
       <label class="btn btn-outline-primary" for="btncheck1">Флажок 1</label>
 
       <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-      <label class="btn btn-outline-primary" for="btncheck2">Флажок 2</label>
+      <label class="btn btn-outline-danger" for="btncheck2">Флажок 2</label>
     </div>
 
-    <h5>Группа кнопок(из тега label) объединенная с радио(radio)</h5>
+
+    <h5 class="mt-3">Группа кнопок(из тега label) объединенная с радио(radio)</h5>
     <div class="btn-group" role="group" aria-label="Базовая группа переключателей радио">
       <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
       <label class="btn btn-outline-primary" for="btnradio1">Радио 1</label>
@@ -82,7 +96,8 @@
       <label class="btn btn-outline-primary" for="btnradio2">Радио 2</label>
     </div>
 
-    <h5>Панели инструментов(группы кнопок объединеныые в группу)</h5>
+
+    <h5 class="mt-3">Панели инструментов(группы кнопок объединеныые в группу)</h5>
     <div class="btn-toolbar" role="toolbar" aria-label="Панель инструментов с группами кнопок">
       <!-- btn-toolbar класс панели инструментов -->
       <div class="btn-group me-2" role="group" aria-label="Первая группа">
@@ -98,7 +113,8 @@
       </div>
     </div>
 
-    <h5>Размеры групп кнопок</h5>
+
+    <h5 class="mt-3">Размеры групп кнопок</h5>
     <!-- Вместо того, чтобы применять классы изменения размера кнопок к каждой кнопке в группе, просто добавьте .btn-group-(lg/sm) к каждой .btn-group, включая каждую при вложении нескольких групп. -->
     <div class="btn-group btn-group-lg" role="group" aria-label="группа больших кнопок">
       <button type="button" class="btn btn-danger">Левая</button>
@@ -106,7 +122,8 @@
       <button type="button" class="btn btn-success">Правая</button>
     </div>
 
-    <h5>Вертикальное раположение кнопок в группе</h5>
+
+    <h5 class="mt-3">Вертикальное раположение кнопок в группе</h5>
     <div class="btn-group-vertical">
       <button type="button" class="btn btn-danger">Левая</button>
       <button type="button" class="btn btn-warning">Средняя</button>
