@@ -23,6 +23,7 @@
     <hr><center><h1>Создание форм и полей(стили для форм и полей)</h1></center><hr>
 
     <h5>Основные стили форм</h5>
+
     <form>
 
       <h6 class="text-info"><i>а. поле для почты</i></h6> <!-- просто заголовки для красоты -->
@@ -30,12 +31,12 @@
       <div class="mb-3"> <!-- каждое поле(с его описанием подсказками итд) в бутстрап должны быть помещены в отдельный блок -->
       <!-- mb-3  = margin botom 3 -->
         <label for="input_email" class="form-label">Email address</label>
-          <!-- form-label - класс для label для поля -->
+        <!-- form-label - класс для label для поля -->
         <input type="email" class="form-control" id="input_email" aria-describedby="email_help">
-          <!-- form-control - класс задающий стили для поля(делает на всю ширину родительского объекта на новую строку итд. Соотв если нужно ограничить можно поместить в блок с классом контейнер) -->
-          <!-- aria-describedby="email_help" - связываем поле с id текстом формы(для вспомогательных технологий) -->
+        <!-- form-control - класс задающий стили для поля, делает на всю ширину родительского объекта на новую строку итд. Соотв если нужно ограничить можно поместить в блок с классом контейнер -->
+        <!-- aria-describedby="email_help" - связываем поле с id текстом формы(для вспомогательных технологий) -->
         <div id="email_help" class="form-text">We'll never share your email with anyone else.</div>
-          <!-- form-text - класс для текста подсказки для поля. Встроенный текст может использовать любой типичный встроенный элемент HTML (будь то <span>, <small>или что-то еще) только с .form-text классом -->
+        <!-- form-text - класс для текста подсказки для поля. Встроенный текст может использовать любой типичный встроенный элемент HTML (будь то <span>, <small>или что-то еще) только с .form-text классом -->
       </div>
 
       <h6 class="text-info"><i>б. поле для пароля</i></h6>
@@ -84,9 +85,11 @@
       <h6 class="text-info"><i>е. простой текст только для чтения</i></h6>
 
       <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label> <!-- класс сетки прямо в label -->
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <!-- col-form-label - класс сетки прямо из label -->
         <div class="col-sm-10">
           <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+          <!-- form-control-plaintext - класс для отображения значеня формы как простого текста -->
         </div>
       </div>
 
