@@ -80,6 +80,20 @@
 }
 
 
+/* 8. opacity - свойство добавляющее прозрачность(работает с любыми объектами а не только с блоками) при помощи коэфициэнта в котором 1 - полностью непрозрачный, а 0 - полностью прозрачный, те невидимый */
+.opacity {
+  opacity: 0.8; /*  */
+
+  height: 200px; width: 250px; background: #32ffff; padding: 20px; margin: 20px;
+  position: relative;
+  top: -150px;
+  left: 100px;
+}
+.under {
+  height: 200px; width: 250px; background: #bec320; padding: 20px; margin: 20px;
+}
+
+
 
 
 
