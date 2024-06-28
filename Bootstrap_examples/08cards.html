@@ -20,23 +20,24 @@
     <!--                                         Текстовые панели/карточки  -->
 
     <!-- https://getbootstrap.com/docs/5.3/components/card/ -->
-    <!-- Панели созданные на основе flexbox по сути просто блоки выделенные стилями предназначенные для изображений, текста, групп списков, ссылок и многого другого. Карточка — это гибкий и расширяемый контейнер содержимого. Он включает в себя параметры верхних и нижних колонтитулов -->
+    <!-- Карточка — это гибкий и расширяемый контейнер содержимого, созданные на основе flexbox по сути просто блоки выделенные стилями предназначенные для изображений, текста, групп списков, ссылок и многого другого. -->
     <hr><center><h1>Текстовые панели/карточки</h1></center><hr>
 
     <br><h5>Основные стили карточек</h5>
-    <div class="card w-25 text-bg-secondary border-danger" style="width: 18rem;">
+    <div class="card text-bg-secondary border-danger w-25">
       <!-- card - класс карточки -->
-      <!-- w-25 - универсальный класс-утилита для задания ширины, со значением auto растянет на всю ширину мат объекта -->
-        <!-- Так же ширину можно задать отдельным стилем style="width: 18rem;" -->
       <!-- text-bg-secondary - цветовой стиль -->
       <!-- border-danger - цветовой стиль обводки -->
-      <div class="card-header">Featured</div> <!-- хэдер если он нужен -->
+      <div class="card-header">Featured</div>
+      <!-- card-header - хэдер если он нужен -->
       <img src="https://img.quizur.com/f/img5c83d26d06ace2.52922329.png?lastEdited=1552142983" class="card-img-top" alt="дбз">
       <!-- card-img-top - Картинка адаптивно занимает верхнюю часть карточки и скругления сверху -->
       <div class="card-body">
         <!-- card-body - класс основного пространства карточки или раздела если их несколько -->
-        <h5 class="card-title">Card title</h5> <!-- Заголовок -->
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> <!-- Подзаголовок -->
+        <h5 class="card-title">Card title</h5>
+        <!-- card-title - заголовок -->
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <!-- card-subtitle - подзаголовок -->
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         <a href="#" class="card-link link-info">Another link</a>
@@ -46,7 +47,8 @@
         <li class="list-group-item">A second item</li>
         <li class="list-group-item">A third item</li>
       </ul>
-      <div class="card-footer text-muted">2 days ago</div> <!-- Футер если нужен -->
+      <div class="card-footer text-muted">2 days ago</div>
+      <!-- card-footer - футер если нужен -->
     </div>
 
     <br><h5>Размещение карточек в сетке</h5>
