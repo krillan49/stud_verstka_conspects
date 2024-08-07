@@ -12,6 +12,8 @@
 
     <!--                                     Позиционирование блоков. float -->
 
+    <hr><h2>Позиционирование блоков. float</h2><hr>
+
     <div id="first_block" class="block"></div>
     <div id="second_block" class="block"></div>
     <div id="third_block" class="block"></div>
@@ -33,6 +35,38 @@
     <p><b>Текст между синим и зеленым блоком</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div id="third_block" class="block"></div>
     <p><b>Текст под блоками</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+    <!--                            Меню сайта на основе списка при помощи float -->
+
+    <div id="clear_block"></div>
+    <hr><h2>Меню сайта на основе списка при помощи float</h2><hr>
+
+    <!-- Вариант 1 простое меню -->
+    <ul id="nav">
+      <li>Главная</li>
+      <li>Новости</li>
+      <li>Контакты</li>
+      <li>О нас</li>
+    </ul>
+
+    <div id="clear_block"></div>
+
+    <!-- Вариант 2 меню с выпадающими элементами -->
+    <ul id="navbar">
+      <li><a href="#">Главная</a></li> <!-- элементы для меню удобно делать ссылками для того чтоб переходить -->
+      <li><a href="#">Новости</a></li>
+      <li>
+        <a href="#">Контакты</a>
+        <ul> <!-- вложен(в li) еще один список, который будет раскрываться при наведении мыши на нужную ячейку меню.  -->
+          <li><a href="#">Адрес</a></li>
+          <li><a href="#">Телефон</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </li>
+      <li><a href="#">О нас</a></li>
+    </ul>
 
 
   </body>
