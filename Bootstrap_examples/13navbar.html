@@ -2,7 +2,7 @@
 <!--
 https://getbootstrap.com/docs/5.3/components/navbar/
 
-Панели навигации могут использовать классы .navbar-toggler, .navbar-collapse и , .navbar-expand{-sm|-md|-lg|-xl|-xxl}чтобы определить, когда их содержимое сворачивается за кнопку. В сочетании с другими утилитами можно выбрать, когда показывать или скрывать определенные элементы.
+Панели навигации могут использовать классы .navbar-toggler, .navbar-collapse и , .navbar-expand{-sm|-md|-lg|-xl|-xxl} чтобы определить, когда их содержимое сворачивается за кнопку. В сочетании с другими утилитами можно выбрать, когда показывать или скрывать определенные элементы.
 
 Для панелей навигации, которые никогда не сворачиваются, добавьте .navbar-expand класс на панель навигации. Для панелей навигации, которые всегда рушатся, не добавляйте никаких .navbar-expand классов
 
@@ -31,7 +31,8 @@ https://getbootstrap.com/docs/5.3/components/navbar/
     <style>
       body { padding-top: 3.5rem;}
     </style>
-    <!-- Поскольку в v5 нет Jumbotron, при переходе на v5 лучший способ реализовать его повторно — повторно использовать код jumbotron v4. -->
+
+    <!-- Поскольку в Bootstrap5 нет Jumbotron, то лучший способ реализовать его — использовать код jumbotron Bootstrap4 -->
     <style type="text/css">
       .jumbotron {
         padding: 3rem 2rem;
@@ -44,12 +45,12 @@ https://getbootstrap.com/docs/5.3/components/navbar/
 
   <body>
 
-    <!-- Можно обернуть всю панель навигации container чтобы шапка занимала только часть ширины страницы в центре -->
+    <!-- Можно обернуть всю панель навигации в container чтобы шапка занимала только часть ширины страницы в центре -->
 
     <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark"> <!-- <nav> обеспечивает доступность для вспомогательных технологий, если использовать <div>, то надо добавить role="navigation" на каждую панель навигации -->
-      <!-- navbar - общий класс обертка для навигационных панелей -->
+      <!-- navbar - общий класс-обертка для навигационных панелей -->
       <!-- navbar-expand{-sm|-md|-lg|-xl|-xxl} - класс адаптивности для свертывания и цветовых схем, определяет, когда содержимое сворачивается за кнопку: lg - значит, что все экраны меньше lg сворачиваются в кнопку -->
-      <!-- fixed-top/fixed-bottom/sticky-top/sticky-bottom - доп классы для фиксации наверху или внизу экрана. Фиксированные навигационные панели используют position: fixed, что означает, что они взяты из обычного потока DOM и могут потребовать специального CSS(например, padding-top на <body>), чтобы предотвратить перекрытие с другими элементами. -->
+      <!-- fixed-top / fixed-bottom / sticky-top / sticky-bottom - доп классы для фиксации наверху или внизу экрана. Фиксированные навигационные панели используют position: fixed, что означает, что они взяты из обычного потока DOM и могут потребовать специального CSS(например, padding-top на <body>), чтобы предотвратить перекрытие с другими элементами. -->
       <!-- bg-(dark/primary/...) - цвет фона. bg-body-tertiary - цвет фона по умолчанию. Можно прописать свой стиль в style -->
       <!-- data-bs-theme="dark" - меняет цвета элементов(шрифты обводки) на те что лучше подходят под темный фон -->
 
@@ -63,9 +64,9 @@ https://getbootstrap.com/docs/5.3/components/navbar/
         </a>
 
         <!--         Кнопка за которую все сворачивается -->
-        <!-- Можно расположить кнопку выше логотипа в коде, тогда она будет отображаться слева(а так справа)  -->
+        <!-- Можно расположить кнопку выше логотипа тут в коде, тогда она будет отображаться слева(а так справа)  -->
         <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
-          <!-- navbar-toggler - для использования с плагином сворачивания и другими функциями переключения навигации. Делает кнопку невидимой до необходимого размера экрана(указанного в navbar-expand), позиционирует ее и добавляет доп стили к внутреннему элементу -->
+          <!-- navbar-toggler - для использования с плагином сворачивания и другими функциями переключения навигации. Делает кнопку невидимой до необходимого размера экрана(тут navbar-expand-lg), позиционирует ее и добавляет доп стили к внутреннему элементу -->
           <!-- bg-warning - меняем фон кнопки -->
           <!-- data-bs-toggle="collapse" - кнопка отвечает за раскрытие collapse объекта -->
           <!-- data-bs-target="#content" - ссылка прикрепления к id collapse объекта который будем открывать этой кнопкой -->
@@ -118,7 +119,7 @@ https://getbootstrap.com/docs/5.3/components/navbar/
 
 
     <!--                  Джамботрон -->
-    <div class="jumbotron"> <!-- Поскольку в v5 нет Jumbotron, при переходе на v5 лучший способ реализовать его повторно — повторно использовать код jumbotron v4. добавив свои стили -->
+    <div class="jumbotron"> <!-- Поскольку в Bootstrap5 нет Jumbotron, то лучший способ реализовать его — использовать код jumbotron Bootstrap4 -->
       <div class="container">
         <h1>Заголовок Джамботрона</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
