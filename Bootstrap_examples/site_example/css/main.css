@@ -34,7 +34,8 @@ body, html {
 @media (min-width: 1100px) {
   .carousel-inner img {
     transform: translateY(-30%);
-    width: 100%; height: auto;
+    width: 100%;
+    height: auto;
   }
 }
 

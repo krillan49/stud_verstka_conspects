@@ -16,7 +16,7 @@ body {
   color: #555;
 
   -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов на мобилках */
-  -webkit-overflow-scrolling: touch;  /* Улучшение скролинга при помощи точскина */
+  -webkit-overflow-scrolling: touch;   /* Улучшение скролинга при помощи точскина */
 
   margin-top: 70px;
 }
@@ -78,12 +78,11 @@ hr {
   min-height: 500px;
   width: 100%;
 
-  background-size: 100%;
+  background-size: cover;
 
   -webkit-background-size: cover; /* бэкграунд для разных браузеров */
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
 
 #headerwrap h1 {
@@ -152,7 +151,6 @@ hr {
 .wb {
   padding-top: 35px;
   margin-bottom: 0;
-
 }
 
 .wb img { max-width: 100% }

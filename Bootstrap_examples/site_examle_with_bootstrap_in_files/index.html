@@ -2,9 +2,13 @@
 
 <!--
 Скачивание:
-download(на главной странице) -> скачать -> распаковываем выбираем нужные нам фаилы(описание фаилов в пункте сравнение фаилов... https://getbootstrap.com/docs/5.3/getting-started/contents/#css-files ; https://getbootstrap.com/docs/5.3/getting-started/contents/#js-files)(например по минимуму: bootstrap.css из папки css  и  bootstrap.bundle.js)
+download(на главной странице) -> скачать -> распаковываем выбираем нужные нам фаилы (описание фаилов в пункте сравнение фаилов)
+https://getbootstrap.com/docs/5.3/getting-started/contents/#css-files
+https://getbootstrap.com/docs/5.3/getting-started/contents/#js-files
+(например по минимуму: bootstrap.css из папки css  и  bootstrap.bundle.js)
 
-Дополнительно качаем иконки с https://fontawesome.ru/, качаем разархивируем, оставляем нужный фаил(тут font-awesome.min.css в папку css и 3 фаила в папку fonts)
+Дополнительно качаем иконки с https://fontawesome.ru/, качаем разархивируем, оставляем нужный фаил, тут:
+font-awesome.min.css в папку css и 3 фаила в папку fonts
 -->
 
 <!DOCTYPE html>
@@ -15,9 +19,9 @@ download(на главной странице) -> скачать -> распак
     <title>Cайт на скачанном Bootstrap с применением доп CSS</title>
     <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1.0"> <!--мобилки-->
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- подключение фонтасом через стили -->
-    <link rel="stylesheet" href="css/main.css"> <!-- свои стили -->
+    <link rel="stylesheet" href="css/bootstrap.css">        <!-- стили Bootstrap -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- подключение Font-awesome через стили -->
+    <link rel="stylesheet" href="css/main.css">             <!-- свои стили -->
   </head>
 
   <body>
@@ -29,7 +33,9 @@ download(на главной странице) -> скачать -> распак
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- делаем лого с использованием элементов и классов https://fontawesome.ru/ -->
-        <a class="navbar-brand" href="#">K<i class="fa fa-circle"></i>LH<i class="fa fa-circle"></i>ZNIC</a>
+        <a class="navbar-brand" href="#">
+          K<i class="fa fa-circle"></i>LH<i class="fa fa-circle"></i>ZNIC
+        </a>
         <div class="navbar-collapse collapse" id="navbar_content">
           <ul class="navbar-nav ms-auto">
             <li><a class="nav-link" href="#">Домой</a></li>
