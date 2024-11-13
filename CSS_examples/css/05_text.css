@@ -61,6 +61,15 @@
 
 
 
+/*                                Подключение фаила шрифтов из директории в проекте */
+
+/* Пример есть в jqwery-stiky_header */
+
+@font-face {
+  font-family: 'Obelix';           /* font name */
+  src: url('../fonts/Obelix.ttf'); /* URL to font */
+}
+
 
 
 
