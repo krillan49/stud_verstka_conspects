@@ -9,6 +9,17 @@ body {
   margin-bottom: 18px;
 }
 
+.title-medium {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.title-small {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
 .text-lead {
   font-size: 16px;
   font-weight: normal;
